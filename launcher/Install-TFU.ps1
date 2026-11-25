@@ -2,9 +2,10 @@
 # Run by RecompLauncher through Prepare.cmd (-Launcher: no prompts, 'progress <0-1> <text>' lines on stdout),
 # or by hand:  .\Prepare.cmd -Disc1:D:\disc1.iso -Disc2:D:\disc2.iso
 #
-# What it does: checks the build tools, downloads this project's source into <InstallDir>\src, finds or builds
+# What it does: finds or installs the build tools (portable Git; with -AcceptVsLicense also Visual Studio Build
+# Tools and LLVM, one administrator prompt), downloads this project's source into <InstallDir>\src, finds or builds
 # the patched ReXGlue SDK, extracts the discs, generates and compiles the game, writes <InstallDir>\tfu_ready.txt.
-# It never downloads game files. Exit codes: 0 ok, 2 no discs, 3 build tools missing, 4 build failed,
+# It never downloads game files. Exit codes: 0 ok, 2 no discs, 3 build tools missing or not installed, 4 build failed,
 # 6 source download failed.
 #
 # Developer shortcut: a file <InstallDir>\tfu_src.txt holding the path of an existing checkout makes the step use
@@ -15,6 +16,7 @@ param(
     [string]$Disc2 = '',
     [string]$Branch = 'main',
     [string]$Sdk = '',
+    [switch]$AcceptVsLicense,   # the player accepted Microsoft's licence: setup may install the Build Tools
     [switch]$Launcher
 )
 $ErrorActionPreference = 'Continue'   # native tools write to stderr; exit codes are checked by hand
@@ -36,19 +38,120 @@ function Note([string]$m) { [Console]::Out.WriteLine($m); Add-Content -LiteralPa
 New-Item -ItemType Directory -Force $InstallDir | Out-Null
 Note "Install-TFU: InstallDir=$InstallDir Branch=$Branch Disc1='$Disc1' Disc2='$Disc2'"
 
-# ---- 1. build tools ----
+# ---- 1. build tools: found, or installed here ----
+# Git: a portable copy in <InstallDir>\tools\git (no administrator rights).
+# Visual Studio 2022 Build Tools (C++) and LLVM/clang: the vendors' own installers, run once with administrator
+# approval, and only when -AcceptVsLicense was passed (the launcher's "build tools" tick, or by hand).
 Progress 0.01 'Checking build tools'
-$missing = @()
-if (-not (Get-Command git -ErrorAction SilentlyContinue)) { $missing += 'Git (winget install Git.Git)' }
-$vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Installer\vswhere.exe'
-$vs = if (Test-Path $vswhere) { & $vswhere -version '[17.0,18.0)' -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath | Select-Object -First 1 } else { $null }
-if (-not $vs) { $missing += 'Visual Studio 2022 Build Tools with the C++ workload' }
+$ProgressPreference = 'SilentlyContinue'
+try { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 } catch {}
+$Tmp = if ($env:TEMP) { $env:TEMP } else { $InstallDir }
+function Get-File([string]$url, [string]$dst) {
+    Note "Downloading $url"
+    Invoke-WebRequest -Uri $url -OutFile $dst -UseBasicParsing -Headers @{ 'User-Agent' = 'tfu-setup' }
+    if (-not (Test-Path -LiteralPath $dst) -or (Get-Item -LiteralPath $dst).Length -lt 100kb) { throw "download of $url is incomplete" }
+}
+function Get-Release([string]$repo, [string]$query) {
+    Invoke-RestMethod -Uri "https://api.github.com/repos/$repo/releases$query" -Headers @{ 'User-Agent' = 'tfu-setup' }
+}
+
+# -- Git --
+$gitDir = Join-Path $InstallDir 'tools\git'
+if (-not (Get-Command git -ErrorAction SilentlyContinue) -and (Test-Path (Join-Path $gitDir 'cmd\git.exe'))) { $env:Path = (Join-Path $gitDir 'cmd') + ';' + $env:Path }
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    Progress 0.01 'Downloading Git (portable)'
+    try {
+        $asset = (Get-Release 'git-for-windows/git' '/latest').assets | Where-Object { $_.name -match '^MinGit-[\d.]+-64-bit\.zip$' } | Select-Object -First 1
+        if (-not $asset) { throw 'no MinGit 64-bit zip in the latest Git for Windows release' }
+        $zip = Join-Path $Tmp $asset.name
+        Get-File $asset.browser_download_url $zip
+        New-Item -ItemType Directory -Force $gitDir | Out-Null
+        Expand-Archive -LiteralPath $zip -DestinationPath $gitDir -Force
+        Remove-Item -LiteralPath $zip -Force -ErrorAction SilentlyContinue
+    } catch { Note "Git download failed: $($_.Exception.Message)" }
+    if (Test-Path (Join-Path $gitDir 'cmd\git.exe')) { $env:Path = (Join-Path $gitDir 'cmd') + ';' + $env:Path }
+    if (-not (Get-Command git -ErrorAction SilentlyContinue)) { Fail 'Git could not be downloaded. Check your connection, or install Git (https://git-scm.com) and press Set Up again.' 3 }
+}
+
+# -- Visual Studio Build Tools and clang --
 function ClangMajor([string]$exe) { $v = & $exe --version 2>$null | Select-Object -First 1; if ($v -match 'version (\d+)\.') { [int]$Matches[1] } else { 0 } }
-$clangs = @()
-if ($vs) { $clangs += (Join-Path $vs 'VC\Tools\Llvm\x64\bin\clang.exe') }
-$clangs += (Join-Path $env:ProgramFiles 'LLVM\bin\clang.exe')
-if (-not ($clangs | Where-Object { (Test-Path $_) -and (ClangMajor $_) -ge 20 })) { $missing += 'clang 20 or newer (winget install LLVM.LLVM)' }
-if ($missing) { Fail ("These build tools are missing: " + ($missing -join '; ')) 3 }
+function Find-Vs {
+    $vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Installer\vswhere.exe'
+    if (-not (Test-Path $vswhere)) { return $null }
+    & $vswhere -version '[17.0,18.0)' -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath | Select-Object -First 1
+}
+function Find-Clang([string]$vs) {
+    $c = @()
+    if ($vs) { $c += (Join-Path $vs 'VC\Tools\Llvm\x64\bin\clang.exe') }
+    $c += (Join-Path $env:ProgramFiles 'LLVM\bin\clang.exe')
+    $c | Where-Object { (Test-Path $_) -and (ClangMajor $_) -ge 20 } | Select-Object -First 1
+}
+function Quote([string]$x) { return [string][char]39 + $x.Replace([string][char]39, [string][char]39 + [string][char]39) + [string][char]39 }
+$vs = Find-Vs
+$clang = Find-Clang $vs
+if (-not $vs -or -not $clang) {
+    $need = @(); if (-not $vs) { $need += 'Visual Studio 2022 Build Tools (C++)' }; if (-not $clang) { $need += 'LLVM/clang 20 or newer' }
+    if (-not $AcceptVsLicense) {
+        [Console]::Out.WriteLine("This PC is missing: " + ($need -join ' and ') + ".")
+        Fail 'Tick "Build tools" on the setup screen so setup can install them (or install them yourself), then press Set Up again.' 3
+    }
+    $vsExe = ''; $llvmExe = ''
+    try {
+        if (-not $vs) {
+            Progress 0.02 'Downloading the Visual Studio Build Tools installer'
+            $vsExe = Join-Path $Tmp 'vs_BuildTools.exe'
+            Get-File 'https://aka.ms/vs/17/release/vs_BuildTools.exe' $vsExe
+        }
+        if (-not $clang) {
+            Progress 0.02 'Downloading LLVM/clang'
+            $rels = @(Get-Release 'llvm/llvm-project' '?per_page=40') | Where-Object { $_.tag_name -match '^llvmorg-(\d+)\.\d+\.\d+$' -and -not $_.prerelease }
+            $pick = $null
+            foreach ($want in 23, 22, 21, 20) {     # 23 is the version this project is built and tested with
+                $pick = $rels | Where-Object { $_.tag_name -match "^llvmorg-$want\." -and ($_.assets | Where-Object { $_.name -match '^LLVM-[\d.]+-win64\.exe$' }) } | Select-Object -First 1
+                if ($pick) { break }
+            }
+            if (-not $pick) { throw 'no LLVM 20-23 Windows installer found in the LLVM releases' }
+            $asset = $pick.assets | Where-Object { $_.name -match '^LLVM-[\d.]+-win64\.exe$' } | Select-Object -First 1
+            $llvmExe = Join-Path $Tmp $asset.name
+            Get-File $asset.browser_download_url $llvmExe
+        }
+    } catch { Fail "A build tool could not be downloaded ($($_.Exception.Message)). Check your connection and press Set Up again." 3 }
+
+    # One elevated helper runs both installers, so Windows asks for approval once.
+    $res  = Join-Path $Tmp 'tfu_tools_result.txt'
+    $help = Join-Path $Tmp 'tfu_tools_admin.ps1'
+    Remove-Item -LiteralPath $res -Force -ErrorAction SilentlyContinue
+    $lines = @('$v = "-"; $l = "-"')
+    if ($vsExe)   { $lines += '$p = Start-Process -FilePath ' + (Quote $vsExe) + ' -ArgumentList "--quiet --wait --norestart --nocache --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended" -Wait -PassThru; $v = $p.ExitCode' }
+    if ($llvmExe) { $lines += '$p = Start-Process -FilePath ' + (Quote $llvmExe) + ' -ArgumentList "/S" -Wait -PassThru; $l = $p.ExitCode' }
+    $lines += 'Set-Content -LiteralPath ' + (Quote $res) + ' -Value "vs=$v llvm=$l" -Encoding ASCII'
+    Set-Content -LiteralPath $help -Value $lines -Encoding ASCII
+    Progress 0.03 ('Installing ' + ($need -join ' and ') + ': approve the Windows prompt')
+    $proc = $null
+    try {
+        $proc = Start-Process -FilePath 'powershell.exe' -Verb RunAs -WindowStyle Hidden -PassThru -ErrorAction Stop `
+                -ArgumentList @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', ('"' + $help + '"'))
+    } catch { $proc = $null }
+    if (-not $proc) { Fail 'The build tools were not installed: the Windows administrator prompt was declined or could not be shown. Press Set Up again and approve it, or install the tools yourself.' 3 }
+    $t0 = Get-Date
+    while (-not $proc.HasExited) {
+        Start-Sleep -Seconds 30
+        Progress 0.03 ("Installing build tools, {0} min so far (10 to 40 is normal)" -f [int]((Get-Date) - $t0).TotalMinutes)
+    }
+    $codes = if (Test-Path -LiteralPath $res) { (Get-Content -LiteralPath $res -TotalCount 1) } else { 'no result file' }
+    Note "Build tool installers finished: $codes  (Visual Studio: 0 or 3010 = ok)"
+    Remove-Item -LiteralPath $help, $res -Force -ErrorAction SilentlyContinue
+    if ($vsExe)   { Remove-Item -LiteralPath $vsExe -Force -ErrorAction SilentlyContinue }
+    if ($llvmExe) { Remove-Item -LiteralPath $llvmExe -Force -ErrorAction SilentlyContinue }
+    $vs = Find-Vs
+    $clang = Find-Clang $vs
+    $still = @(); if (-not $vs) { $still += 'Visual Studio 2022 Build Tools with the C++ workload' }; if (-not $clang) { $still += 'LLVM/clang 20 or newer (https://github.com/llvm/llvm-project/releases)' }
+    if ($still) {
+        [Console]::Out.WriteLine("Installer results: $codes")
+        Fail ("Still missing after the install: " + ($still -join '; ') + ". Install it yourself (a restart may be needed), then press Set Up again.") 3
+    }
+}
+Note "Build tools: git=$((Get-Command git).Source) vs=$vs clang=$clang"
 
 # ---- 2. source ----
 $Src = Join-Path $InstallDir 'src'

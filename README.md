@@ -1,5 +1,16 @@
 # tfu-recomp
 
+<a href="https://recomplauncher.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://recomplauncher.com/assets/press/launcher/badge-light.svg"><img alt="Get it on RecompLauncher" src="https://recomplauncher.com/assets/press/launcher/badge-dark.svg" height="48"></picture></a>
+
+## How to play
+You need your own **two Xbox 360 disc images (.iso)** of Star Wars: The Force Unleashed - Ultimate Sith Edition.
+1. In [RecompLauncher](https://recomplauncher.com), install this game and give it Disc 1 and Disc 2.
+2. Tick **Build tools** on the setup screen. If Git, Visual Studio 2022 Build Tools or LLVM/clang are missing, setup
+   installs them (about 10 GB) and Windows asks for administrator approval once.
+3. Wait for the build (one to two hours the first time, about 50 GB free), then press Play.
+
+Nothing is downloaded from the game: it is built on your PC from your discs. Without the launcher, see Quick start.
+
 Native Windows build of **Star Wars: The Force Unleashed - Ultimate Sith Edition** (Xbox 360), made by static
 recompilation with the ReXGlue SDK. Unofficial fan project, not affiliated with or endorsed by Lucasfilm, Disney or
 Microsoft. This repo holds only original code, build scripts, notes,
@@ -21,7 +32,8 @@ Game logic still runs at 30 fps.
 
 ## Requirements
 - Windows 10/11 x64, a CPU with AVX2 (the build targets x86-64-v3).
-- Visual Studio 2022 Build Tools, clang 20+, CMake, Ninja.
+- Visual Studio 2022 Build Tools (C++ workload, which includes CMake and Ninja) and clang 20+. The RecompLauncher
+  setup installs these when they are missing; `Play.ps1` expects them to be there already.
 - ReXGlue SDK with this project's patch (`sdk\`). A stock SDK will not build or run this; `Play.ps1` and
   `tools\Get-Sdk.ps1` fetch, patch and build the right one for you. git is needed for that.
 - Your own disc images: put both ISOs in the folder that contains this repo.

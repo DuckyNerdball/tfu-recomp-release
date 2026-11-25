@@ -22,7 +22,18 @@
   "prepare": {
     "program": ["Prepare.cmd"],
     "args": ["-Launcher", "-InstallDir", "{install}", "-Disc1:{input:disc1}", "-Disc2:{input:disc2}", "-Branch", "main"],
-    "label": "Building the game from your discs (about an hour the first time)",
+    "label": "Building the game from your discs (one to two hours the first time)",
+    "options": [
+      {
+        "id": "build_tools",
+        "label": "Build tools: Visual Studio Build Tools, LLVM and Git",
+        "note": "Needed to build the game on your PC. Installed only if missing (about 10 GB); Windows asks for administrator approval once.",
+        "os": ["windows"],
+        "required": true,
+        "args": ["-AcceptVsLicense"],
+        "license": { "name": "Microsoft Visual Studio license terms", "url": "https://visualstudio.microsoft.com/license-terms/" }
+      }
+    ],
     "done": ["{install}/tfu_ready.txt"],
     "keeps_copy": true
   },

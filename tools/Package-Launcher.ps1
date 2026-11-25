@@ -21,9 +21,15 @@ if ($Dev) {
 } else {
     Remove-Item $devFile -Force -ErrorAction SilentlyContinue
     Remove-Item (Join-Path $Out 'tfu_ready.txt') -Force -ErrorAction SilentlyContinue
+    # A release always builds its own tagged source, not whatever main has moved on to.
+    $mf = Join-Path $Out 'recomplauncher.json'
+    $j  = [IO.File]::ReadAllText($mf)
+    $j2 = $j.Replace('"-Branch", "main"', '"-Branch", "v' + $Version + '"')
+    if ($j2 -eq $j) { throw 'recomplauncher.json: "-Branch", "main" not found, cannot pin the release to its tag.' }
+    [IO.File]::WriteAllText($mf, $j2, (New-Object Text.UTF8Encoding($false)))
     if (Test-Path $Zip) { Remove-Item $Zip -Force }
     Compress-Archive -Path ($files | ForEach-Object { Join-Path $Out $_ }) -DestinationPath $Zip
     Write-Host "Release package: $Zip" -ForegroundColor Green
-    Write-Host "Before releasing: set `"-Branch`", `"v$Version`" in launcher\recomplauncher.json, tag the repo v$Version, then:"
+    Write-Host "The package builds tag v$Version, so tag and push it before publishing:"
     Write-Host "  gh release create v$Version `"$Zip`" --title `"v$Version`" --notes `"Setup package. Needs your own two discs.`""
 }
