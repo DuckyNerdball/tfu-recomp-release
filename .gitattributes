@@ -1,0 +1,2 @@
+sdk/*.patch -text
+*.ps1 text

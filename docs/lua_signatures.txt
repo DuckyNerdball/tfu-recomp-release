@@ -1,0 +1,1589 @@
+# arg types inferred from the Lua API getters each binding calls (actor = name string or actor object)
+AND                                         (optnum)  0x8279BEE8
+ARShift                                     (optnum, optnum)  0x8279C190
+AbortLevel                                  ()  0x8279D3E8
+Abs                                         (num)  0x8279C348
+Activate                                    (actor)  0x827BBBC8
+AddBehaviorListener                         (actor, num) -> bool  0x827D3138
+AddCollisionFlags                           (actor, int) -> bool  0x827BBE38
+AddCollisionListener                        (actor, num, actor, bool, bool) -> bool  0x827BCBD0
+AddCollisionType                            (actor, int) -> bool  0x827BC060
+AddDebugOutput                              (string)  0x8279B8D0
+AddEncounterEnergy                          (actor, num)  0x825C2CC0
+AddFaction                                  (string) -> int  0x8279E448
+AddInfluence                                (actor, bool, num)  0x825B95C8
+AddInstantUnlockUponFirstKill               (string, string)  0x825B98D8
+AddPoint                                    (actor, string, string, obj, num, num) -> bool  0x827B7900
+AddPointLight                               (string, obj, num, obj, bool)  0x827AC340
+AddStringTable                              (string, bool, bool)  0x8279F2F0
+AddToWorld                                  (actor)  0x827AFC40
+AfterCredits                                ()  0x8279D3E8
+Agitate                                     (actor, actor)  0x825C4B08
+AlignToSupportNormal                        (actor, bool)  0x827BEC00
+Ambush                                      (actor, actor, num) -> bool  0x825B7A30
+AngleBetween                                (obj, obj)  0x827A4508
+AppendAbilitySequence                       (actor, string, string, num, int, int) -> bool  0x825C6268
+AppendAbilitySequenceEx                     (actor, int, string, string, num, int, int) -> bool  0x825C5598
+AppendSeqToProbAbility                      (actor, string, string, num, int, bool, int) -> bool  0x825C5E68
+AppendSeqToProbAbilityEx                    (actor, int, string, string, num, int, bool, int) -> bool  0x825C5378
+ApplyForce                                  (actor, obj, num, obj) -> bool  0x827E1160
+ApplyForceOverTime                          (actor, obj, num, obj) -> bool  0x827D89F0
+ApplyForceOverTimeToPhysicsEntity           (int, obj, num, num, obj) -> bool  0x827AD238
+ApplyForceToPhysicsEntity                   (udata, obj, num, obj) -> bool  0x827AD138
+ApplyImpulse                                (actor, obj, num, obj) -> bool  0x827E1240
+ApplyMaterial                               (actor, string)  0x827B9EB0
+ApplyRadialForce                            (obj, optnum)  0x827E0DC8
+ApplyRadialRepulsor                         (actor, num, num) -> bool  0x827D2490
+ApplyRepulsor                               (actor, obj, num) -> bool  0x827D23C8
+ApplyTorque                                 (actor, obj)  0x827BD888
+AreTutorialsOn                              () -> bool  0x827A00B0
+Assert                                      (bool, string)  0x827A1338
+AssertOnError                               ()  0x82799250
+AssetCatalogWriteAccesses                   ()  0x8279D858
+AssignLoadGroupsToSpline                    ()  0x82BA24B8
+Attach                                      (actor, string, actor) -> bool  0x827B7B28
+AttachBossMeter                             (actor) -> bool  0x825B88A8
+AttachInPlace                               (actor, actor) -> bool  0x827B7C18
+AttachListener                              (actor)  0x827BB480
+AttachScript                                (actor, string)  0x827B06D8
+AttachToPoint                               (actor, string, actor) -> bool  0x827B7A58
+AttackTarget                                (actor, actor) -> bool  0x825B7940
+AttribExists                                (actor, string) -> bool  0x827B0028
+AttribGetBoolean                            (actor, string) -> bool  0x827B0098
+AttribGetFloat                              (actor, string)  0x827B0178
+AttribGetInt                                (actor, string) -> int  0x827B0250
+AttribGetString                             (actor, string)  0x827B0328
+AttribGetVector                             (actor, string)  0x827B0410
+AttribSetBoolean                            (actor, string, bool)  0x827B0108
+AttribSetFloat                              (actor, string, optnum)  0x827B01E0
+AttribSetInt                                (actor, string, int)  0x827B02C0
+AttribSetString                             (actor, string, string)  0x827B03A8
+AttribSetVector                             (actor, string, obj)  0x827B04E8
+AudioPlay                                   (string, optnum)  0x827EC6B0
+AudioPlayMusic                              (string, optnum, optnum)  0x827EC7B0
+AudioStopMusic                              (optnum)  0x8279F450
+AvoidObstaclesOfMassGreaterThan             ()  0x827186E0
+BanksDump                                   ()  0x82BA24B8
+BeginGetup                                  (actor, int, udata, bool, udata, num) -> bool  0x827D3830
+BlackWhileLoading                           () -> bool  0x8279D4E0
+Break                                       ()  0x82BA24B8
+BreakRen                                    (actor) -> bool  0x827D8C30
+CacheAsset                                  (string)  0x8279DCA8
+CacheAttached                               (string, actor)  0x827BF580
+CacheAudioCue                               (string)  0x827E4E18
+CacheAudioWav                               (string)  0x827992A0
+CacheEncounterAsset                         ()  0x825BC358
+CacheMaterialVFX                            (string)  0x8279A570
+Cameras                                     ()  0x8279B208
+CanInterrupt                                (actor, int) -> bool  0x825C4DC0
+CanMoveToOffset                             (actor, obj) -> bool  0x825BF630
+CancelRequest                               (actor)  0x825C9D90
+ChangeLocomotionContext                     (actor, string)  0x825C4760
+CheckAbilityCanBeExecuted                   (actor, string, string) -> bool  0x825C6858
+CinematicSaberEnd                           (actor, string)  0x825CD290
+CinematicSaberEndAll                        ()  0x825CD2F8
+CinematicSaberExtend                        (actor, string)  0x825CD1C0
+CinematicSaberRetract                       (actor, string)  0x825CD228
+CinematicSaberStart                         (actor, bool, string, string)  0x825CD120
+CinematicSingleSpawn                        (string, string)  0x825BE010
+CinematicStyleClear                         (actor)  0x825BCAC8
+CinematicStyleCombat                        (actor)  0x825BCA08
+CinematicStyleNeutral                       (actor)  0x825BCA68
+Clear                                       (actor) -> bool  0x827DA180
+ClearMatrixStack                            ()  0x827A2F98
+ClosestEdgeToPoint                          (obj, int) -> bool/int  0x827B1118
+Collided                                    (actor) -> bool  0x827BD3D8
+CommitSinglePlayerGameProgress              (int, int) -> int  0x825BC0E0
+ConfirmAbilityPossibleToBeExecuted          (actor, string, string) -> bool  0x825C6700
+ConsoleOut                                  ()  0x82BA24B8
+Continue                                    (actor, int)  0x827DABA0
+ContinueOnError                             ()  0x82799278
+Controller                                  ()  0x8279B1D0
+ConvertToGameFOV                            (optnum)  0x8279B900
+Cover                                       (obj, string)  0x827B2F38
+Create                                      (string)  0x827A1208
+CreateBallAndSocketChainConstraint          ()  0x827E22A0
+CreateBallAndSocketConstraint               (udata, obj, num, num)  0x827ADC20
+CreateBehaviorCombatMovementData            (bool, num, num) -> int  0x825B7ED0
+CreateBehaviorDodgeLineData                 (bool, obj, num) -> int  0x825B8558
+CreateBehaviorDodgePointData                (bool, obj, num) -> int  0x825B8690
+CreateBehaviorFaceDirectionData             (bool, obj) -> int  0x825BE298
+CreateBehaviorFacePositionData              (bool, obj) -> int  0x825BE138
+CreateBehaviorFleeTargetData                (bool, num, bool) -> int  0x825B8290
+CreateBehaviorForceDashData                 (bool, num, num, actor) -> int  0x825B8398
+CreateBehaviorMovePositionData              (bool, obj, num, bool) -> int  0x825B7FE0
+CreateBehaviorMoveToRangeData               (bool, num, actor) -> int  0x825B7DE8
+CreateBehaviorMoveToSiteData                (bool, actor) -> int  0x825B84B0
+CreateBehaviorPlayAnimData                  (bool, bool, num) -> int  0x825B8188
+CreateBoxEntity                             (obj)  0x827ADAC8
+CreateCameraController                      (actor, actor, actor)  0x827B0FD0
+CreateCapsuleEntity                         (num, obj, obj)  0x827AD478
+CreateCharacterController                   (actor, actor, actor)  0x827B0E38
+CreateComponent                             (actor) -> bool  0x825C9E48
+CreateCylinderEntity                        (num, obj)  0x827AD6A0
+CreateDMMAffectorController                 (actor, actor, actor)  0x827B0D80
+CreateDMMAffectorKeyframedController        (actor, actor)  0x827DA6D8
+CreateHingeConstraint                       (udata, obj, num, num)  0x827ADE48
+CreateLimitedHingeConstraint                (udata, obj, num, num, obj, num, num)  0x827AE130
+CreateLocationController                    (actor, actor, actor)  0x827B0F18
+CreateMarkerController                      (actor, actor)  0x827DA7D8
+CreateOverrideMaterialGlobal                (string, string) -> int  0x8279A2A8
+CreateOverrideMaterialLocal                 (string, string) -> int  0x8279A1A8
+CreatePulleyConstraint                      (udata, obj, num, num, num)  0x827AE980
+CreateRagdollConstraint                     (udata, obj, num, num, num, num, num, num, num, num, num, num)  0x827AEC88
+CreateRopeBallAndSocketChainConstraint      ()  0x827E25C8
+CreateScriptComp                            (actor)  0x827B0678
+CreateSliderConstraint                      (udata, obj, num, num, num, num)  0x827AF140
+CreateSphereEntity                          (num, obj)  0x827AD878
+CreateSpringConstraint                      (udata, udata, obj, num, num, bool, bool)  0x827AE750
+CreateStiffSpringConstraint                 (udata, obj, num, num)  0x827AE518
+CreateTrail                                 (actor, string, string)  0x827B3A28
+CreateVehicle                               ()  0x82BA24B8
+CueDump                                     ()  0x82BA24B8
+CuePlay                                     ()  0x827990B0
+CueTrap                                     (string)  0x82799178
+CullDead                                    (actor)  0x825C4C00
+Dash                                        ()  0x825C3198
+Deactivate                                  (actor)  0x827BBB68
+DeathVolumeEnter                            (actor)  0x825BD188
+Debug                                       ()  0x8279A6B0
+DebugAnimConstraints                        (actor, int) -> bool  0x827D4BF0
+DebugAnimTracks                             (actor, int) -> bool  0x827D44B8
+DebugAnimTree                               (actor, int) -> bool  0x827D4568
+DebugAnimTreeLog                            (actor) -> bool  0x827D4618
+DebugBehaviors                              (bool, int)  0x82798BC8
+DebugBreakPoint                             (actor)  0x825B7D40
+DebugConstraintEnforcement                  (actor, int) -> bool  0x827D46C0
+DebugDraw                                   (actor)  0x825C9ED8
+DebugMeToggle                               (actor)  0x827B1088
+DebugPrint                                  (actor, string, bool)  0x825C4568
+DebugSkiff                                  (actor, actor, string)  0x825C9530
+DeleteTest                                  ()  0x8279DFE8
+Destroy                                     (actor)  0x827D94D8
+DestroyConstraint                           (udata) -> int  0x8279CDA0
+Detach                                      (actor, actor) -> bool  0x827D4F90
+DetectAnimFootplants                        (actor, string, num, num, num)  0x827E3A78
+DetectBlockFootplants                       (actor, string, string, num, num, num)  0x827E3958
+DetermineGetupPosition                      (actor) -> int  0x827D3798
+Disable                                     (actor)  0x827DCC98
+DisableAdvancedPowerIcon                    (actor, int, bool)  0x825BCB68
+DisableAllBrain                             ()  0x825BDAA0
+DisableAllBrainExceptMoveSet                ()  0x825BDB78
+DisableAllEdgesInRen                        (actor)  0x827DB330
+DisableAutoDetach                           (actor)  0x827DAF78
+DisableBrain                                (actor)  0x825C3B30
+DisableBrainExceptMoveSet                   (actor)  0x825C3AE0
+DisableCollisionExpectStaticObject          (actor) -> int  0x827BEC90
+DisableCollisionWith                        (actor, actor) -> bool  0x827BC180
+DisableDebugDraw                            (actor)  0x827D9720
+DisableEdge                                 ()  0x827DB328
+DisableGameComp                             (actor)  0x825CA9A8
+DisableGetUpBehavior                        (actor)  0x825C38B8
+DisableGravity                              (actor)  0x827BDB70
+DisableImpedeNavigation                     (actor)  0x827BDC40
+DisableSpawner                              (actor)  0x825B7BB0
+DisableSteeringBehaviors                    (actor, bool)  0x825C3C80
+DisableTargeting                            (actor)  0x827BA040
+DisabledTurretWhenTargetOutOfAngleLimit     (actor, bool) -> bool  0x825C6AF8
+DiscardEncounterCard                        (actor, int)  0x825C2C50
+DisplayBlockNames                           (bool)  0x8279AF70
+DisplayMsg                                  (string)  0x8279F4C8
+DoAbility                                   (actor, string, string) -> bool  0x825C4018
+DoDamage                                    (actor, actor, optnum, int, bool, bool)  0x825CA1E8
+DoRadialDamage                              (obj, actor, optnum, int)  0x825BD4C8
+DoRadialDamageExcludeSelf                   (obj, actor, optnum, int)  0x825BD5E0
+DoesUnlockPackageExist                      (string, actor) -> bool  0x825BABB8
+DontRestorePlayer                           (actor)  0x827BA0A0
+DrawAxes                                    ()  0x827B9468
+DrawAxesTimed                               ()  0x827B9470
+DrawBone                                    ()  0x82BA24B8
+DrawBoneByName                              ()  0x82BA24B8
+DrawBoundingBox                             ()  0x827B9708
+DrawBoundingBoxTimed                        ()  0x827B9710
+DrawBox                                     ()  0x827AAF60
+DrawBoxTimed                                ()  0x827AAF68
+DrawCircle                                  ()  0x827B9548
+DrawCircleTimed                             ()  0x827B9550
+DrawCylinder                                ()  0x82BA24B8
+DrawGeosphere                               ()  0x827B9648
+DrawGeosphereTimed                          ()  0x827B9658
+DrawIcon2D                                  (optnum, optnum, string, optnum, obj)  0x827AAD58
+DrawLine                                    (obj, obj, obj, obj)  0x827AA978
+DrawLine2D                                  (obj, obj, obj, obj)  0x827AAAC8
+DrawLine2DTimed                             (obj, obj, obj, obj, optnum)  0x827AAB70
+DrawLineTimed                               (obj, obj, obj, obj, optnum)  0x827AAA18
+DrawPie                                     (obj2, num, num, num, obj, obj, bool)  0x827AAE40
+DrawQuad                                    ()  0x82BA24B8
+DrawSkeleton                                (actor, bool) -> bool  0x827D4CA0
+DrawSphere                                  ()  0x827B9628
+DrawSphereTimed                             ()  0x827B9638
+DrawText2D                                  ()  0x827AA968
+DrawText2DTimed                             ()  0x827AA970
+DrawText3D                                  ()  0x827AAD48
+DrawText3DTimed                             ()  0x827AAD50
+DrawTexture3D                               (obj, string, optnum, obj)  0x827AADD8
+DrawTriangle                                (obj, obj, obj, obj, obj, obj, bool)  0x827AAC28
+DumpHeap                                    (int, string)  0x8279DB68
+DumpLoadedAssets                            (string)  0x8279DD20
+Enable                                      (actor)  0x827DCC48
+EnableAllBrain                              ()  0x825BDC50
+EnableAllEdgesInRen                         (actor)  0x827DB3D8
+EnableAmbushNodesInVolume                   (actor, bool)  0x825CCA98
+EnableAnticipateCollision                   (actor, bool)  0x825C4228
+EnableAutoDetach                            (actor)  0x827DAF28
+EnableBodyCollisionDamage                   (actor, bool)  0x825CA590
+EnableBrain                                 (actor)  0x825C3A90
+EnableBreakable                             (actor, bool) -> bool  0x827D8CB0
+EnableCleanupTimer                          (actor, bool)  0x827BEF68
+EnableCollision                             (actor, bool, int)  0x827BBCA8
+EnableCollisionWith                         (actor, actor, bool) -> bool  0x827BC210
+EnableContract                              (string, bool)  0x8279EB78
+EnableDebugDraw                             (actor)  0x827D96D0
+EnableDynamicLoad                           (int)  0x8279D8B8
+EnableEdge                                  ()  0x827DB320
+EnableEncounterDeckDraw                     (actor, bool)  0x825C2BD8
+EnableEncounterSpawnGroup                   (int, bool) -> bool  0x825BC290
+EnableForcePoints                           (actor, bool)  0x825B9B20
+EnableGameComp                              (actor)  0x825CA958
+EnableGetUpBehavior                         (actor)  0x825C3860
+EnableGravity                               (actor)  0x827BDBD8
+EnableHud                                   (bool)  0x82799EA0
+EnableImpedeNavigation                      (actor)  0x827BDCA8
+EnableLimitedHingeRotationalMotor           (udata, bool, num, num) -> int  0x8279CE38
+EnableOnScreenCheck                         (actor, bool)  0x825C7CB8
+EnablePathNodesInVolume                     (actor, bool)  0x825CC930
+EnablePositionDistortion                    (bool)  0x82799ED8
+EnableSpawner                               (actor)  0x825B7B70
+EnableTargeting                             (actor)  0x827B9FE0
+Enabled                                     ()  0x822BD950
+EndBehaviorAnimOverlay                      (actor, string)  0x827D3EE8
+EndBehaviors                                (actor) -> bool  0x827D3440
+EndButtonMashTest                           (actor)  0x825BA1D8
+EndButtonMatchTest                          (actor)  0x825B9E28
+EndButtonSwingMeterTest                     (actor)  0x825BA018
+EndCut                                      ()  0x8279D458
+EndSDBattleMinigame                         (bool)  0x827A0C70
+EndScriptControl                            (int, bool)  0x825B8BB0
+EndStickRockTest                            (actor)  0x825BA800
+EndStickStruggleTest                        (actor)  0x825BA650
+EndStickSwipeTest                           (actor)  0x825BA338
+EnterPassword                               (string, actor) -> bool  0x825BA928
+EquipCostume                                (string)  0x825BBB88
+EquipLightsaberColorCrystal                 (int, int, bool)  0x825CAB88
+EquipLightsaberPowerCrystal                 (int, int, bool)  0x825BBAD8
+Error                                       ()  0x82BA24B8
+EscortTarget                                (actor, actor)  0x825C4860
+Eval                                        (actor, optnum)  0x827DA1E8
+EvaluateProbabilityAbilityQueue             (actor) -> bool/int  0x825C6598
+ExecuteAbility                              (actor, string)  0x825C0880
+ExecuteAbilityFunction                      (int, string, string)  0x825C0A38
+ExecuteAbilityGroup                         (actor, string, string, actor)  0x825C0908
+ExecuteAbilityGroupOnObject                 (actor, actor, string, string)  0x825C09A0
+ExecuteForceRepulseRelease0                 (int, string, string)  0x825C0AE8
+Exist                                       (string)  0x8279D030
+ExplodeRen                                  (actor, num, num, num, string, actor, num, bool, bool) -> bool  0x827D8D48
+ExportAnimationManifest                     (string)  0x825CE050
+FaceDirection                               (actor, obj)  0x825BCED0
+FaceObject                                  (actor, actor)  0x825BDEE8
+FaceTarget                                  (actor, actor) -> bool  0x825B78E8
+FadeIn                                      (actor, string, optnum, optnum, string, string)  0x827E4560
+FadeInEvent                                 (actor, string, optnum, optnum, string, string)  0x827E4A18
+FadeOut                                     (actor, string, optnum, string, string)  0x827E46E8
+FadeOutEvent                                (actor, string, optnum, string, string)  0x827E4C98
+FailLevel                                   ()  0x8279D3B8
+Failed                                      ()  0x82BA24B8
+FallToDeath                                 (actor, actor)  0x825B9870
+FileCacheGetStats                           ()  0x8279E3B0
+Find                                        (string)  0x827AF7A0
+FindByCRC                                   ()  0x8279D0B8
+FindClosestNav                              (obj, optnum, optnum, int)  0x825BED68
+FindClosestPoint                            (actor, obj, num)  0x827DA320
+FindClosestSite                             (actor, string)  0x825BD0C8
+FindEdl                                     (string) -> int  0x8279ABD0
+FindFirstAnim                               (string) -> int  0x8279B6A8
+FindObjectToThrow                           (actor)  0x825C4310
+FindRandomPointNearTarget                   (actor, optnum)  0x825BEED8
+FindRelativePath                            (string)  0x8279D130
+FindSilent                                  (string)  0x827A4F40
+FinishLevel                                 ()  0x8279D388
+FinishingMoveHideObjectsInVolume            (actor, actor)  0x825CB200
+FinishingMoveProjectileEffect               (actor, string, string, optnum)  0x825CAF80
+FinishingMoveRestoreHiddenObjects           (actor)  0x825CB278
+FireEvent                                   (string, string)  0x8279EC80
+FixUpInertiaLocal                           (actor) -> bool  0x827BC9E0
+FixupPlayerSpawn                            (actor, int)  0x825BC3E8
+FlushDebugBuffer                            ()  0x822BD950
+FocusFit                                    (int, actor)  0x827B7D58
+Follow                                      (actor, bool)  0x827B8398
+ForceAbilityChange                          (actor, string, string, num, int, int) -> bool  0x825C6058
+ForceAbilityChangeEx                        (actor, int, string, string, num, int, int) -> bool  0x825C5780
+ForceBreakForceGrip                         (actor)  0x825C7B00
+ForceLightning                              ()  0x825C31E8
+ForceMovesetState                           (actor, string)  0x825C9930
+ForcePush                                   ()  0x825C31C0
+ForcePushCharge                             ()  0x825C3238
+ForcePushRelease                            (int)  0x825C3260
+ForceRepulse                                ()  0x825C3210
+ForceSectorVisible                          (string, optnum)  0x827E3290
+Freeze                                      (actor)  0x827B9CD8
+FreezeAnimation                             (actor, bool)  0x827D4E78
+GetAA                                       () -> int  0x8279B3F8
+GetAABB                                     (actor)  0x827BCAE8
+GetAITetherInnerRadius                      (actor)  0x825C7870
+GetAITetherOuterRadius                      (actor)  0x825C7910
+GetAITetherRenID                            (actor)  0x825C77C8
+GetAbilityList                              (actor) -> int  0x825C6958
+GetAffectsObjectsWithIBL                    (actor) -> bool  0x827DE1C8
+GetAllChoreCrcs                             (actor)  0x827B7428
+GetAllChoreNames                            (actor)  0x827B74F8
+GetAllEnemiesInRadius                       (actor, optnum, int, bool, bool)  0x825BE790
+GetAllInPath                                (bool, bool)  0x827D9308
+GetAllInRadius                              (obj, int)  0x827B08D8
+GetAllInVolume                              (actor)  0x827D88F0
+GetAllPlayers                               ()  0x827D1CE0
+GetAllRens                                  () -> int  0x827BF200
+GetAllRensInPrefab                          (actor) -> int  0x827D9588
+GetAllRensInside                            (actor)  0x827DBFA0
+GetAllSites                                 (string)  0x825BE3E0
+GetAmbientFalloff                           (actor)  0x827DE448
+GetAngularVelocity                          (actor)  0x827BE000
+GetAnim                                     ()  0x827E1B18
+GetAnimKey                                  ()  0x827E1D08
+GetAnimParamSetterControl                   (actor)  0x825C2910
+GetAnimRootDisplacement                     (string, optnum, string)  0x827AB3C8
+GetAnimSep                                  ()  0x827E2088
+GetAnimTranslations                         (string)  0x827AA180
+GetApproximated                             (actor) -> bool  0x827DE088
+GetAssociatedConstraint                     (actor)  0x827BDE48
+GetAttachee                                 (actor)  0x827D5018
+GetAttachmentRens                           (actor)  0x827D5088
+GetAudio                                    ()  0x827E1B20
+GetBlock                                    (int, int, int)  0x827E19B8
+GetBlockKey                                 (int, int, int, int)  0x827E1BC0
+GetBlockSep                                 (int, int, int, string, int, int)  0x827E20A8
+GetBodyPartForBone                          (actor, string)  0x827D32D0
+GetBodyPartName                             (udata)  0x8279C7E0
+GetBoneMatWorld                             (string)  0x827B77A8
+GetBonePosLocal                             (actor, string)  0x827B7638
+GetBonePosWorld                             (actor, string)  0x827B76D0
+GetBool                                     (string, string) -> bool  0x8279EDD8
+GetBreakagePercent                          (actor) -> int  0x827B9E28
+GetButtonMashTestState                      (actor) -> int  0x825BA168
+GetButtonMatchTestState                     (actor) -> int  0x825B9DD8
+GetButtonSwingMeterTestState                (actor) -> int  0x825B9F88
+GetCamKey                                   ()  0x827E1D10
+GetCamSep                                   ()  0x827E2090
+GetCamera                                   ()  0x827E1B38
+GetCaptureFrameNumber                       () -> int  0x8279E1E0
+GetCaptureFrameNumberState                  () -> bool  0x8279E270
+GetCard                                     ()  0x827E1B28
+GetCastLightmapShadows                      (actor) -> bool  0x827DDE08
+GetCastShadows                              (actor) -> bool  0x827DDCC8
+GetCastsIBL                                 (actor) -> bool  0x827DE308
+GetCenterOfMass                             (actor)  0x827BEDF0
+GetCharacterCapsuleRadiusAndHeight          (actor)  0x827BD018
+GetChoreBlockCount                          (actor, string) -> int  0x827D3C00
+GetChoreBlockNameByIndex                    (actor, string, int)  0x827D3CA8
+GetChoreSet                                 (udata)  0x827A2420
+GetCineCameraTarget                         ()  0x827AC2C0
+GetClip                                     (int)  0x827E1AD8
+GetClipSep                                  (int)  0x827E2048
+GetClosestEdges                             (obj, int) -> int  0x827B14F8
+GetClosestInList                            (obj)  0x827BB248
+GetCollider                                 (actor) -> bool  0x827BD460
+GetColliderEntity                           (actor) -> bool  0x827BD508
+GetCollisionBodyPart                        (actor) -> bool  0x827BD718
+GetCollisionFlags                           (actor) -> int  0x827BBD30
+GetCollisionGroup                           (actor) -> int  0x827B9A90
+GetCollisionPoint                           ()  0x827BD658
+GetCollisionType                            (actor) -> int  0x827BBF58
+GetCollisionVelocity                        (actor) -> bool  0x827BD5B0
+GetColor                                    (actor)  0x827DD3E8
+GetConeScale                                (actor)  0x827DDA10
+GetConstrainedEntities                      (udata)  0x8279CC60
+GetConstraintByName                         (string, string)  0x8279CB68
+GetContaining                               (obj, int)  0x827B3E70
+GetCurrentAITarget                          (actor)  0x825C42A0
+GetCurrentAnimTotalTime                     (actor)  0x827D4DD0
+GetCurrentMovesetState                      ()  0x825B8878
+GetDebugDraw                                (actor) -> bool  0x827D97C8
+GetDeltaTime                                ()  0x8279D9F0
+GetDifficulty                               () -> int  0x825BBE98
+GetDiffuse                                  (actor)  0x827DD2B0
+GetDistSq                                   (obj)  0x827AC618
+GetDistSqBetweenRens                        (actor, actor)  0x827BB398
+GetDistSqMatVec                             (obj2)  0x827AC6F0
+GetDuration                                 (actor, string)  0x827D5240
+GetDurationFromWavName                      (string)  0x82799108
+GetEdl                                      (int)  0x827E1870
+GetEffectColor                              (actor)  0x827DE8D8
+GetEffectColorEffectGlobalLight             (actor) -> int  0x827DE660
+GetEffectColorEffectType                    (actor) -> int  0x827DE780
+GetEffectFadeTime                           (actor)  0x827DEDD8
+GetEffectFlickerProbability                 (actor)  0x827DF618
+GetEffectFlickerSpeed                       (actor)  0x827DF510
+GetEffectIntensity                          (actor)  0x827DEA18
+GetEffectMoveDistanceX                      (actor)  0x827DF9B0
+GetEffectMoveDistanceY                      (actor)  0x827DFAB8
+GetEffectMoveDistanceZ                      (actor)  0x827DFBC0
+GetEffectMoveEffectType                     (actor) -> int  0x827DF760
+GetEffectMoveInLocalSpace                   (actor) -> bool  0x827DF880
+GetEffectMoveSpeedX                         (actor)  0x827DFCC8
+GetEffectMoveSpeedY                         (actor)  0x827DFDD0
+GetEffectMoveSpeedZ                         (actor)  0x827DFED8
+GetEffectOffDelay                           (actor)  0x827DF1F8
+GetEffectOffFlicker                         (actor)  0x827DF408
+GetEffectOffVariance                        (actor)  0x827DF300
+GetEffectOnDelay                            (actor)  0x827DEEE0
+GetEffectOnFlicker                          (actor)  0x827DF0F0
+GetEffectOnVariance                         (actor)  0x827DEFE8
+GetEffectProjTextureSpeedX                  (actor)  0x827E0650
+GetEffectProjTextureSpeedY                  (actor)  0x827E0758
+GetEffectProjTextureTileX                   (actor)  0x827E0860
+GetEffectProjTextureTileY                   (actor)  0x827E0968
+GetEffectRotateEffectType                   (actor) -> int  0x827DFFE0
+GetEffectRotateInLocalSpace                 (actor) -> bool  0x827E0100
+GetEffectRotateSpeedX                       (actor)  0x827E0230
+GetEffectRotateSpeedY                       (actor)  0x827E0338
+GetEffectRotateSpeedZ                       (actor)  0x827E0440
+GetEffectRotateSweepAngle                   (actor)  0x827E0548
+GetEffectStartRandom                        (actor) -> bool  0x827DEC68
+GetEffectStartTime                          (actor)  0x827DEB20
+GetEnabled                                  (actor) -> bool  0x827DD090
+GetEnergy                                   (actor)  0x825C20A8
+GetEnergyMax                                (actor)  0x825C2108
+GetEnergyPoints                             (actor) -> int  0x825C2D30
+GetEnergyProgress                           (actor)  0x825C2DA0
+GetEnergyProgressPerPoint                   ()  0x825BC310
+GetEventSet                                 ()  0x827E1B48
+GetEventSetEvent                            (int, int, int, int, int)  0x827E1D20
+GetEye                                      ()  0x827AA6F8
+GetFOV                                      ()  0x82799AA8
+GetFPS                                      ()  0x8279A980
+GetFactionID                                (string) -> int  0x8279E448
+GetFirstCamera                              (int)  0x827E1B58
+GetFirstCameraIds                           (int) -> int  0x827E6460
+GetFloat                                    (string, string)  0x8279EF70
+GetForcePoints                              (int)  0x825BC658
+GetForcePointsForNextLevel                  (int)  0x825BC5C0
+GetForward                                  (actor)  0x827BAF38
+GetFreezeAnimation                          (actor) -> bool  0x827D4F18
+GetFriction                                 (actor)  0x827BDAE8
+GetFrustumPlanes                            ()  0x827ACB90
+GetFwd                                      (actor)  0x827BAF38
+GetGravity                                  ()  0x827A4DE8
+GetGripStyle                                () -> bool  0x825BBF08
+GetGripper                                  (actor)  0x825C2168
+GetGripperToDropRen                         (actor, actor) -> bool  0x825C21C8
+GetHealth                                   (actor)  0x825CA610
+GetHealthFraction                           (actor)  0x825CA6F0
+GetInertiaInvLocal                          (actor)  0x827BC7C0
+GetInertiaLocal                             (actor)  0x827BC848
+GetInertiaLocalRPE                          ()  0x827A4CC8
+GetInnerConeAngle                           (actor)  0x827DD830
+GetInnerRadius                              (actor)  0x827DD650
+GetIntensity                                (actor)  0x827DD560
+GetLastAttackerID                           (actor)  0x825CA860
+GetLeftStickDir2D                           ()  0x827D1B30
+GetLength                                   (actor)  0x827DA5F8
+GetLevel                                    (int)  0x825BC6E8
+GetLight                                    ()  0x827E1B40
+GetLightKey                                 ()  0x827E1D18
+GetLightSep                                 ()  0x827E2098
+GetLinearVelocity                           ()  0x827E1048
+GetLoadedWorld                              ()  0x8279D9C0
+GetLocalPositionOf                          (actor)  0x827BB108
+GetLocalYawTo                               (actor, actor)  0x827BAFC8
+GetLocator                                  ()  0x82799D88
+GetMPEncounterSpawns                        (actor, string, int, num) -> int  0x825C29D8
+GetMarkerSetID                              ()  0x8279D488
+GetMass                                     (actor)  0x827BC620
+GetMaterialGlobal                           (string) -> int  0x8279A260
+GetMaterialLocal                            (string) -> int  0x8279A160
+GetMaterialName                             (actor)  0x827D16C0
+GetMaterialValue                            (string, int)  0x8279A4E8
+GetMatrix                                   ()  0x827AB810
+GetMatrixRotation                           ()  0x827AB8A8
+GetMatrixTranslation                        ()  0x827AB850
+GetMaxHealth                                (actor)  0x825CA680
+GetMeleeWeapon                              (actor)  0x825C6F18
+GetMeleeWeaponCollisionBox                  (actor, int) -> bool  0x825BA690
+GetMinMaxTime                               (actor)  0x827DA578
+GetMindState                                (actor) -> int  0x825C44D0
+GetMpActorName                              (int)  0x825BC458
+GetName                                     ()  0x8279D1F8
+GetNearestPortal                            (obj) -> int  0x827B9718
+GetNumAnimKeys                              ()  0x8279B138
+GetNumAnimSepChannels                       ()  0x8279BA38
+GetNumAnimSeps                              ()  0x8279BBF8
+GetNumAnims                                 ()  0x8279AE38
+GetNumAudio                                 ()  0x8279AE40
+GetNumBlockKeys                             (int, int, int) -> int  0x8279B010
+GetNumBlockSepChannels                      (int, int, int, string) -> int  0x8279BA58
+GetNumBlockSeps                             (int, int, int, string, int) -> int  0x8279BC18
+GetNumBlocks                                (int, int) -> int  0x8279AD00
+GetNumCamKeys                               ()  0x8279B130
+GetNumCamSeps                               ()  0x8279BC00
+GetNumCameraSepChannels                     ()  0x8279BA40
+GetNumCameras                               ()  0x8279AE58
+GetNumCards                                 ()  0x8279AE48
+GetNumChores                                (actor) -> int  0x827B75C8
+GetNumClipSepChannels                       (int)  0x8279B9F8
+GetNumClipSeps                              (int)  0x8279BBB8
+GetNumClips                                 (int)  0x8279ADF8
+GetNumDamageTypes                           () -> int  0x825B97E0
+GetNumEventSetEvents                        (int, int, int, int) -> int  0x8279AED8
+GetNumEventSets                             ()  0x8279AE68
+GetNumLightKeys                             ()  0x8279B140
+GetNumLightSepChannels                      ()  0x8279BA48
+GetNumLightSeps                             ()  0x8279BC08
+GetNumLights                                ()  0x8279AE60
+GetNumPresets                               ()  0x8279AE70
+GetNumPrimaryObjStep                        ()  0x827A07E0
+GetNumRequires                              (int) -> int  0x8279AC30
+GetNumSecondaryObjStep                      ()  0x827A09E8
+GetNumSectors                               (actor) -> int  0x827BA5E0
+GetNumSubtitles                             ()  0x8279AE50
+GetNumTracks                                (int) -> int  0x8279AC98
+GetNumUnlockPackages                        (int, actor) -> int  0x825BB0B8
+GetNumXformSepChannels                      ()  0x8279BA50
+GetNumXformSeps                             ()  0x8279BC10
+GetOrbit                                    (int)  0x82799AF0
+GetOuterConeAngle                           (actor)  0x827DD920
+GetOuterRadius                              (actor)  0x827DD740
+GetPath                                     (actor)  0x827AF820
+GetPathStringDebug                          (actor)  0x827AF920
+GetPhysicsEntityHandle                      (actor)  0x827BDD10
+GetPhysicsEntityLinearVelocity              ()  0x827A4EE8
+GetPhysicsEntityPosition                    ()  0x827A4E38
+GetPhysicsEntityTransform                   ()  0x827A4E90
+GetPieces                                   (actor)  0x827DCD30
+GetPitch                                    (int)  0x82799B50
+GetPlayer                                   ()  0x8279D228
+GetPlayerBlockDuration                      ()  0x825B8810
+GetPortalIndexByName                        (string, int) -> int  0x82799FB8
+GetPosition                                 (actor)  0x827BA7C0
+GetPositionMode                             ()  0x82799D00
+GetPreset                                   ()  0x827E1B50
+GetPrimaryObjStep                           ()  0x827A06C0
+GetProjTexName                              (actor)  0x827DE520
+GetProjTexTileX                             (actor)  0x827E0860
+GetProjTexTileY                             (actor)  0x827E0968
+GetProjTexture                              (actor)  0x827DE520
+GetQueuedEDL                                ()  0x8279A930
+GetRenFactionId                             (actor) -> int  0x827D99B8
+GetRenIdFromPhysicsEntityHandle             (udata)  0x8279CF48
+GetRequires                                 (int, int)  0x827E18D8
+GetRestitution                              (actor)  0x827BEAD8
+GetRightStickDir2D                          ()  0x827D1BD0
+GetRootPos                                  ()  0x827ABA48
+GetRootRot                                  ()  0x827ABA78
+GetRotationYawDegrees                       (actor)  0x827BABA0
+GetRotationYawRadians                       (actor)  0x827BAB18
+GetScale                                    (actor)  0x827BEFF8
+GetScreenResolution                         () -> int  0x8279A0C0
+GetSecondaryObjStep                         (string) -> bool  0x827A0858
+GetSectorName                               (actor)  0x827BA428
+GetSectorNames                              (actor)  0x827BA4B8
+GetShadowAlpha                              (actor)  0x827DDAF8
+GetShadowBias                               ()  0x8279B448
+GetShadowNear                               ()  0x8279B4B0
+GetShadowOnly                               (actor) -> bool  0x827DDF48
+GetShadowScale                              (actor)  0x827DDA10
+GetShadowSplit                              (actor)  0x827DDBE0
+GetShadowSplitFar                           (actor)  0x827DDBE0
+GetSide                                     (actor)  0x827BAE20
+GetSpawner                                  (actor)  0x825C3FA8
+GetStickRockTestState                       (actor) -> int  0x825BA790
+GetStickStruggleTest                        (actor) -> int  0x825BA600
+GetStickSwipeTestState                      (actor) -> int  0x825BA2E8
+GetString                                   (string, string)  0x8279F120
+GetSubtitle                                 ()  0x827E1B30
+GetSyncedWithID                             (actor)  0x825CCE70
+GetTangent                                  (actor, optnum)  0x827DA420
+GetTarget                                   ()  0x827AA750
+GetTargetDistance                           (actor)  0x825C6650
+GetTargetMode                               ()  0x82799D58
+GetTargetPosition                           (actor)  0x827BC2D0
+GetTextureDim                               (string) -> int  0x827A2600
+GetTime                                     (actor, int)  0x827DA8D8
+GetTotalGameTime                            ()  0x8279D990
+GetTrack                                    (int, int)  0x827E1948
+GetTransform                                (actor)  0x827BA940
+GetTutorialStatus                           (int, int)  0x825BC788
+GetType                                     (actor) -> int  0x827DD1C0
+GetUnlockPackageCatagoryFlags               (string) -> int  0x825BAC78
+GetUnlockPackageComboCost                   (string, actor) -> int  0x825BAD08
+GetUnlockPackageCurActivationCount          (string, actor) -> int  0x825BAA78
+GetUnlockPackageForceCost                   (string, actor) -> int  0x825BADC8
+GetUnlockPackageHandleForRank               (string, int, actor) -> int  0x825BB598
+GetUnlockPackageInfoList                    (int, actor) -> bool/int  0x825BB7A0
+GetUnlockPackageLocalizedDesc               (string, actor)  0x825BB000
+GetUnlockPackageLocalizedTitle              (string, actor)  0x825BAF48
+GetUnlockPackageMaxActivationCount          (string) -> int  0x825BAB28
+GetUnlockPackageTalentCost                  (string, actor) -> int  0x825BAE88
+GetUp                                       (actor)  0x827BAEA8
+GetXformSep                                 ()  0x827E20A0
+GetZeroGGripper                             (actor)  0x825CAA78
+GetZeroGGripperToDropRen                    (actor) -> bool  0x825CAB08
+Get_WireframeMode                           (actor, int)  0x827D5428
+Get_mBendingCompSpringCo                    (actor, int)  0x827D6430
+Get_mBindingFreezeThreshold                 (actor, int)  0x827D71D8
+Get_mBindingSkinningThreshold               (actor, int)  0x827D70E0
+Get_mBindingSkinningTweakValue              (actor, int)  0x827D74C0
+Get_mBodyAccurateRepulsion                  (actor, int)  0x827D5928
+Get_mBodyInterpenetrationsDisallowed        (actor, int)  0x827D5A48
+Get_mBracketBindingMaxVal                   (actor, int)  0x827D73C8
+Get_mBracketBindingMinVal                   (actor, int)  0x827D72D0
+Get_mClothDensity                           (actor, int)  0x827D6528
+Get_mCollideRepulsionMaxDist                (actor, int)  0x827D6EF0
+Get_mCollideRepulsionSprStr                 (actor, int)  0x827D6FE8
+Get_mCompressionSpringAdjCo                 (actor, int)  0x827D6140
+Get_mCompressionSpringCoMax                 (actor, int)  0x827D6048
+Get_mCompressionSpringCoMin                 (actor, int)  0x827D5F50
+Get_mDampCo                                 (actor, int)  0x827D6338
+Get_mExpansionSpringAdjCo                   (actor, int)  0x827D5D58
+Get_mExpansionSpringCoMax                   (actor, int)  0x827D5C60
+Get_mExpansionSpringCoMin                   (actor, int)  0x827D5B68
+Get_mFrictionCoeff                          (actor, int)  0x827D6DF8
+Get_mGravityMult                            (actor, int)  0x827D6620
+Get_mMaxPostCollisionAdjust                 (actor, int)  0x827D6CF8
+Get_mNeutralCompSpringCo                    (actor, int)  0x827D6238
+Get_mNeutralExpLengthScale                  (actor, int)  0x827D5E50
+Get_mSelfCollisionRepulseExclDist           (actor, int)  0x827D6B08
+Get_mSelfCollisionRepulseStr                (actor, int)  0x827D6C00
+Get_mSelfCollisionRepulsionDist             (actor, int)  0x827D6A08
+Get_mSkinnedVertRestorationDamp             (actor, int)  0x827D6800
+Get_mSkinnedVertRestorationRopeLen          (actor, int)  0x827D68F8
+Get_mSkinnedVertRestorationStr              (actor, int)  0x827D6708
+Get_mUsesBodyAccurateCollision              (actor, int)  0x827D5808
+Get_mUsesSelfCollision                      (actor, int)  0x827D56E8
+Go                                          (string, string) -> int  0x827E2FB8
+Gust                                        (optnum, optnum, optnum, optnum)  0x827A10B8
+HasDesiredAbility                           (actor) -> bool  0x825B7CA8
+Heal                                        (actor, actor, optnum)  0x825CA4D8
+HeapByCategory                              (int)  0x8279DBC8
+HeapBySize                                  (int)  0x8279DBC8
+HeapCompact                                 (int)  0x8279DC78
+HeapFreeReport                              (int)  0x8279DBC8
+HeapFromSize                                (int, int)  0x8279DBF8
+HeapPrintReport                             ()  0x8279DC50
+HeapSmallAlloc                              (int)  0x8279DBC8
+Hide                                        (string)  0x8279F578
+HideAllDynamicObjectsInVolume               (actor)  0x827E3350
+HideFromLayer                               (actor)  0x827B9298
+HideSDBattleMinigame                        ()  0x827A0C20
+HideSubtitle                                ()  0x8279F680
+HideTimerMeter                              ()  0x8279FBE8
+HideTrainingBox                             ()  0x8279FAF8
+HideTutorialBox                             ()  0x8279F978
+HideTutorialMenuButton                      ()  0x8279FD00
+HighlightObjectiveOff                       (actor) -> bool  0x825CAD10
+HighlightObjectiveOn                        (actor) -> bool  0x825CAC98
+HoldAndAttack                               (actor, actor, num) -> bool  0x825B7850
+HoldPosition                                (actor, num) -> bool  0x825B77B8
+Idle                                        (actor) -> bool  0x825B7AC8
+InputAddMapDirectory                        (string)  0x8279D690
+InputGetMappedAxisValue                     (string, int)  0x8279DA20
+InputGetMappedButtonValue                   (string, int)  0x8279DA90
+InputIsMapOnStack                           (string, int) -> bool  0x8279D6D0
+InputIsMappedButtonDown                     (string, int) -> bool  0x8279D7B8
+InputIsMappedButtonSatisfied                (string, int) -> bool  0x8279D748
+InputPopMap                                 (int)  0x8279D5E8
+InputPushMap                                (string, int, bool) -> bool  0x8279D560
+InputRemoveMap                              (string, int)  0x8279D628
+InputRumble                                 (optnum, optnum, int)  0x8279DDD0
+InputShowAllInputMaps                       ()  0x8279D828
+InputStopAllRumble                          ()  0x8279DE50
+InsertKnot                                  (actor, optnum, obj) -> bool  0x827D9C78
+InsertKnotAtChannel                         (actor, optnum, int, optnum) -> bool  0x827D9D38
+InsertSepAtChannel                          (actor, int, optnum, optnum, optnum, optnum, optnum, optnum, optnum, int, int, int, int) -> bool  0x827D9DE8
+InterpolateTo                               (actor, num, obj)  0x827B7FB8
+InterruptBrain                              (actor)  0x825C59C0
+IrisIn                                      (num, obj, string)  0x827B3168
+IrisOut                                     (num, obj, string)  0x827B3220
+IsAIOnScreen                                (actor) -> bool  0x825C7B78
+IsAlive                                     (actor) -> bool  0x825C7FC0
+IsAwake                                     (actor) -> bool  0x827B9D98
+IsAwareOfEnemies                            (actor) -> bool  0x825C3F40
+IsBehaviorActive                            (actor) -> bool  0x827D36D8
+IsBehaviorActiveAndDriving                  (actor) -> bool  0x827D3638
+IsBlockCountEqual                           (actor, int) -> bool  0x825C6E38
+IsBlockPlaying                              () -> bool  0x827D2E10
+IsBlockPrimary                              () -> bool  0x827D2F08
+IsBlockableAttackDetected                   (actor) -> bool  0x825C6BC0
+IsBodyStationary                            (actor) -> bool  0x827D3958
+IsBrainReady                                (actor, int) -> bool  0x825C4CC0
+IsBreakable                                 (actor) -> bool  0x827DCE80
+IsBroken                                    (actor) -> bool  0x827DCE10
+IsCharacter                                 (actor) -> bool  0x827BCDA0
+IsCinematicPlaying                          () -> bool  0x8279B2C8
+IsCollisionEnabled                          (actor, int) -> bool  0x827BBC28
+IsConstraintBroke                           (int) -> int  0x8279CD10
+IsContractEnabled                           (string) -> bool  0x8279EC08
+IsDMMAffector                               (actor) -> bool  0x827D1FD8
+IsDead                                      (actor) -> bool  0x825CA8D0
+IsDevMode                                   () -> bool  0x825BC158
+IsDisplayBlockNames                         () -> bool  0x8279AFB0
+IsEdlSkippable                              () -> bool  0x8279AB20
+IsEnabled                                   (string) -> bool  0x8279EB00
+IsFinal                                     () -> bool  0x8279DE80
+IsFreeToAttack                              (actor) -> bool  0x825C6C60
+IsGettingUp                                 (actor) -> bool  0x825C1450
+IsGripped                                   (actor) -> bool  0x825B9C00
+IsGrippingObject                            (int, actor) -> bool  0x825C34F0
+IsInView                                    (actor) -> bool  0x827AFF08
+IsInWorld                                   (actor) -> bool  0x827AFCA0
+IsInYourEarEDL                              () -> bool  0x8279AFE0
+IsInside                                    (actor) -> bool  0x827DBCA8
+IsInvincible                                (int) -> bool  0x825CCEE0
+IsLevelUnlocked                             (int) -> bool  0x825BCCA8
+IsLight                                     (actor) -> bool  0x827D8148
+IsMakingLevelPack                           () -> bool  0x8279DEA8
+IsMarkedUltimateEvil                        () -> bool  0x825BBDC0
+IsMarkedUltimateGood                        () -> bool  0x825BBD50
+IsMatrixStackFull                           () -> bool  0x8279B608
+IsMicroConsoleActive                        () -> bool  0x8279D518
+IsMovieCapture                              () -> bool  0x8279AAC8
+IsNPC                                       (actor) -> bool  0x825C8058
+IsOfActorType                               (actor, string) -> bool  0x827BF0A8
+IsOutSignalSet                              (actor) -> bool  0x825C1890
+IsPS3                                       () -> bool  0x8279DEA8
+IsPlayerMeleeAttackDetected                 () -> int  0x825C14B8
+IsRegionJP                                  () -> bool  0x827A1058
+IsRenBlocking                               (actor) -> bool  0x825C1560
+IsRenDeath                                  (actor) -> bool  0x825C6FE0
+IsRenForceGripped                           (actor) -> bool  0x825C15F8
+IsRenProne                                  (actor) -> bool  0x825C6DC0
+IsRenTargetingRen                           (actor, actor) -> bool  0x825C7090
+IsRunning                                   (actor) -> bool  0x827D9668
+IsSectorVisible                             (actor) -> bool  0x827AFE50
+IsShowOnlyCineMarkersets                    () -> bool  0x8279B1A0
+IsSignalSet                                 (actor) -> bool  0x825C1910
+IsStillDynamicLoading                       () -> bool  0x8279D4B0
+IsStopEdlPending                            () -> bool  0x8279B270
+IsStuck                                     (actor) -> bool  0x825C9A40
+IsSuspended                                 (actor) -> bool  0x827B05F8
+IsUnlockPackagePrereq                       (string, actor) -> bool  0x825BA9C8
+IsUnlockPackagePrereqForRank                (string, int, actor) -> bool  0x825BB358
+IsValid                                     (actor) -> bool  0x827AFB50
+IsVerbose                                   () -> bool  0x8279ABA0
+IsVisible                                   (actor) -> bool  0x827AFD60
+IsWaitingForChore                           (actor) -> bool  0x827B7080
+IsWin32                                     () -> bool  0x8279DEA8
+IsXBox360                                   () -> bool  0x8279DE80
+IsXInverted                                 () -> bool  0x825BBFB8
+IsYInverted                                 () -> bool  0x825BBF60
+IsZeroGGripped                              (actor) -> bool  0x825CA9F8
+Jump                                        ()  0x825C32F8
+Kill                                        (actor, actor)  0x825B9808
+KillActor                                   (actor)  0x825C3910
+KillAll                                     ()  0x825B7408
+LShift                                      (optnum, optnum)  0x8279C098
+LUA_RefUnusedFunctions_DO_NOT_CALL          ()  0x8279E2B8
+Launch                                      (int, obj, optnum, actor, actor, string, string)  0x825C0CE0
+LecBreak                                    ()  0x82BA24B8
+List                                        () -> int  0x8279A9B0
+ListAllPortalNames                          ()  0x82BA24B8
+Load                                        () -> bool  0x825B9570
+LoadActor                                   (string, string, obj)  0x827AF9B8
+LoadEdl                                     (string) -> int  0x8279A8A8
+LoadMasterData                              () -> int  0x825BC010
+LoadMaterialGlobal                          (string) -> int  0x8279A218
+LoadMaterialLocal                           (string) -> int  0x8279A118
+LoadRankProfile                             (string)  0x825C33E0
+LoadScreen                                  (string)  0x827B1950
+LoadTest                                    ()  0x8279DF88
+LoadWorld                                   (string)  0x8279D2F0
+LocalToWorldVec                             (udata, obj) -> bool  0x827ACFA0
+Lock                                        (actor)  0x827D2600
+LockTarget                                  (actor, actor)  0x825C3960
+Log                                         ()  0x82BA24B8
+Loop                                        (actor, int)  0x827DAA50
+MakeAware                                   (actor, actor)  0x825B7440
+MakeCharacterDynamic                        (actor) -> bool  0x827BD178
+MakeCharacterNonDynamic                     (actor, num) -> bool  0x827BD210
+MakeDynamic                                 (actor) -> bool  0x827BC4C8
+MakeDynamicPhysicsEntity                    (udata) -> bool  0x8279CB08
+MakeFixed                                   (actor) -> bool  0x827BC440
+MakeIntoCharacter                           (actor) -> bool  0x827BD0D8
+MakeInvisible                               (actor, bool) -> bool  0x827AFCF8
+MakeJumpTo                                  (obj) -> bool  0x825B76D0
+MakeKeyframed                               (actor) -> bool  0x827BC378
+MakeKeyframedPhysicsEntity                  (udata) -> bool  0x8279CAA8
+MakeMoveTo                                  (obj, bool) -> bool  0x825B75A8
+MakeMoveToOffsetFromPos                     (obj) -> bool  0x825BDD28
+MakeMoveToUntilTargetAcquired               (obj, bool) -> bool  0x825B7498
+MakeQuatFromAxisAndAngle                    (obj, num)  0x827A3C88
+MakeRotationMatrix                          (num, num)  0x827AC890
+MakeRotationMatrixFromAxisAngle             (num)  0x827A3BE0
+MarkUltimateEvil                            () -> bool  0x825BBCD8
+MarkUltimateGood                            () -> bool  0x825BBC60
+Matrix                                      (obj2)  0x827A3B38
+MatrixEquality                              (obj2, obj2) -> bool  0x827A4468
+MatrixGet                                   (obj2, string)  0x827ACAA0
+MatrixIdentity                              (obj2)  0x827A3F90
+MatrixInverse                               (obj2)  0x827A3F60
+MatrixMultiply                              (obj2, obj2)  0x827A4018
+MatrixRotate                                (obj)  0x827AB900
+MatrixSet                                   (obj2, string, obj)  0x827A4080
+MatrixToQuat                                (obj2)  0x827A4248
+MatrixTranslate                             (obj)  0x827AB7A0
+MatrixValidate                              (obj2) -> bool  0x827A4298
+McGuffinRouteEvent                          (string, actor, actor)  0x827BB508
+MenuButton                                  (string)  0x8279A370
+MessagePlayer                               (string)  0x827A0108
+MiniGameSDBattleController                  (string)  0x827A0D18
+MiniGameSetButton                           (string, bool, bool)  0x8279F770
+MiniGameStickRockUIActivate                 (bool)  0x827A0D98
+MiniGameTriggerInitMsg                      ()  0x8279F8C8
+MiniGameTriggerResult                       (bool)  0x8279F890
+MixerActivatePreset                         (string, optnum)  0x827991A8
+MixerDump                                   ()  0x82BA24B8
+Mod                                         (optnum, optnum)  0x8279C210
+MoveToPosition                              (actor, obj, optnum)  0x827BB568
+MoveToSameSectorAs                          (actor, actor)  0x827BA240
+MovieTest                                   (string)  0x8279E058
+MusicTransition                             (string)  0x82799428
+NOT                                         (optnum)  0x8279BE88
+NotifyTeleport                              (actor)  0x827BA300
+NotifyTeleportWithoutResettingPlayerState   (actor)  0x827BA3C8
+OR                                          (optnum)  0x8279BF78
+OnSMMsg                                     ()  0x827A9790
+OnSMUpdate                                  ()  0x827A97F0
+OnScreenDuration                            (actor)  0x825C7C20
+OnStateMsg                                  ()  0x827A9728
+Oscillate                                   (actor, int)  0x827DAAC0
+OverrideHealth                              (actor, optnum)  0x825CA760
+OverrideLocomotionMaxSpeed                  (actor, optnum)  0x825C24A0
+Parse                                       (string) -> int  0x82798F28
+PathInside                                  (actor)  0x827AF8A0
+PathToStringDebug                           (udata)  0x8279D1A0
+Pause                                       (actor, int)  0x827DAB30
+PauseAll                                    ()  0x8279A770
+PauseGame                                   (bool)  0x8279DD50
+PerfStats                                   (string, int, int)  0x82799DE8
+PickRandomSite                              (string)  0x825B8798
+Play                                        (obj, string)  0x827EDA08
+PlayAll                                     (num, int)  0x8279A6D0
+PlayEDL                                     (string)  0x82799468
+PlayEvent                                   (actor, string)  0x827E4930
+PlayFrame                                   (actor, int, string)  0x827DA9D0
+PlayMusic                                   (int, string, string, string, optnum, optnum)  0x827E4EC8
+PlayVoiceCue                                (actor, string, int)  0x827D10C8
+PlayVoiceEvent                              (actor, string)  0x827B7CC8
+PopCamera                                   ()  0x825B9798
+PopMatrix                                   ()  0x8279B648
+PopMiniGameInput                            (actor) -> bool  0x825B9CD8
+PortalBack                                  () -> int  0x82799F38
+PortalDebug                                 (num)  0x8279A010
+PortalEnable                                (int, bool)  0x827A2570
+PortalFront                                 () -> int  0x82799F10
+PortalGetFarDistance                        (int)  0x827A2500
+PortalSetFarDistance                        (num, int)  0x827A2488
+PortalSetNearFar                            (num, num)  0x82799F60
+PosInRange                                  (actor, actor) -> bool  0x825BCF98
+PrepAnim                                    (string, string, bool, bool, bool) -> int  0x827A29C0
+PrerollEDL                                  (string)  0x827994D8
+PrimaryObjectiveMessage                     (string)  0x827A0F30
+PrintBoneAtTime                             (actor, string, string, string, int, num, bool)  0x827D4988
+PrintOverlayParams                          (actor, int, num, num)  0x827B7108
+PrintShaderCacheStats                       ()  0x8279A318
+PrintSkeleton                               (actor)  0x827D4780
+ProcessEndOfLevelResults                    ()  0x825BBA10
+ProfileNextFrame                            ()  0x82BA24B8
+ProjectWorldToScreen                        (obj, obj2) -> bool  0x827AAF70
+PurgeAllDynamic                             ()  0x8279D888
+PurgeEDLAnimation                           (string)  0x8279AE78
+PushCamera                                  ()  0x825B9750
+PushForeverAdjustColorBalanceAmount         (optnum)  0x827C68B8
+PushForeverAdjustColorBalanceBias           (optnum)  0x827C63A8
+PushForeverAdjustColorBalanceCMY            (obj)  0x827C6048
+PushForeverAdjustColorBalancePreserveLuminosity(optnum)  0x827C6630
+PushForeverAdjustColorBalanceRGB            (obj)  0x827C5CE8
+PushForeverAdjustDesaturationAmount         (optnum)  0x827C6EA0
+PushForeverAdjustDesaturationColor          (obj)  0x827C6B40
+PushForeverAdjustLayersAmount               (optnum)  0x827C7F80
+PushForeverAdjustLevelsInAmount             (optnum)  0x827C5A60
+PushForeverAdjustLevelsInMax                (optnum)  0x827C57D8
+PushForeverAdjustLevelsInMaxRGB             (obj)  0x827C51F0
+PushForeverAdjustLevelsInMin                (optnum)  0x827C5550
+PushForeverAdjustLevelsInMinRGB             (obj)  0x827C4E90
+PushForeverAdjustLevelsOutAmount            (optnum)  0x827C7CF8
+PushForeverAdjustLevelsOutMax               (optnum)  0x827C7A70
+PushForeverAdjustLevelsOutMaxRGB            (obj)  0x827C7488
+PushForeverAdjustLevelsOutMin               (optnum)  0x827C77E8
+PushForeverAdjustLevelsOutMinRGB            (obj)  0x827C7128
+PushForeverClearColor                       (obj)  0x827C4B30
+PushForeverDepthOfFieldBlurPasses           (optnum)  0x827C0600
+PushForeverDepthOfFieldFarBlurAmount        (optnum)  0x827BFBE0
+PushForeverDepthOfFieldFarBlurDistance      (optnum)  0x827BF958
+PushForeverDepthOfFieldNearBlurAmount       (optnum)  0x827C0378
+PushForeverDepthOfFieldNearBlurDistance     (optnum)  0x827C00F0
+PushForeverDepthOfFieldNearBlurPlane        (optnum)  0x827BFE68
+PushForeverFarClip                          (optnum)  0x827C4620
+PushForeverFogClipOffset                    (optnum)  0x827C27C0
+PushForeverFogColor                         (obj)  0x827C1F50
+PushForeverFogDensity                       (optnum)  0x827C2A48
+PushForeverFogFar                           (optnum)  0x827C2538
+PushForeverFogNear                          (optnum)  0x827C22B0
+PushForeverFogType                          (optnum)  0x827C2CD0
+PushForeverGustDuration                     (optnum)  0x827CA800
+PushForeverGustDurationVariety              (optnum)  0x827CA2F0
+PushForeverGustLikelyHood                   (optnum)  0x827C9DE0
+PushForeverGustSpeed                        (optnum)  0x827CAD10
+PushForeverGustSpeedVariety                 (optnum)  0x827CA578
+PushForeverGustStrength                     (optnum)  0x827CAA88
+PushForeverGustStrengthVariety              (optnum)  0x827CA068
+PushForeverGustTilt                         (optnum)  0x827CAF98
+PushForeverHdrAutoExposureClampMax          (optnum)  0x827C3468
+PushForeverHdrAutoExposureClampMin          (optnum)  0x827C31E0
+PushForeverHdrAutoExposureLag               (optnum)  0x827C36F0
+PushForeverHdrAutoExposureRangeMax          (optnum)  0x827C3C00
+PushForeverHdrAutoExposureRangeMin          (optnum)  0x827C3978
+PushForeverHdrBloomAmount                   (optnum)  0x827C3E88
+PushForeverHdrBloomDistance                 (optnum)  0x827C4398
+PushForeverHdrBloomThreshold                (optnum)  0x827C4110
+PushForeverHdrExposure                      (optnum)  0x827C2F58
+PushForeverMotionBlurAmount                 (optnum)  0x827C0B10
+PushForeverMotionBlurCenterPoint            (obj)  0x827C1458
+PushForeverMotionBlurDeformDirection        (obj)  0x827C0D98
+PushForeverMotionBlurDeformScale            (obj)  0x827C10F8
+PushForeverMotionBlurEnabled                (optnum)  0x827C0888
+PushForeverMotionBlurEndFade                (optnum)  0x827C1A40
+PushForeverMotionBlurGreyScaleAmt           (optnum)  0x827C1CC8
+PushForeverMotionBlurStartFade              (optnum)  0x827C17B8
+PushForeverNearClip                         (optnum)  0x827C48A8
+PushForeverPlayerHeightOffset               (optnum)  0x827CB730
+PushForeverPlayerRadius                     (optnum)  0x827CB220
+PushForeverPlayerStrength                   (optnum)  0x827CB4A8
+PushForeverPushRadius                       (optnum)  0x827CB9B8
+PushForeverPushSpringBackSpeed              (optnum)  0x827CC3D8
+PushForeverPushSpringFriction               (optnum)  0x827CC660
+PushForeverPushStrength                     (optnum)  0x827CBC40
+PushForeverPushVertFlatness                 (optnum)  0x827CBEC8
+PushForeverPushVertStrength                 (optnum)  0x827CC150
+PushForeverWaveDir1                         (optnum)  0x827C8718
+PushForeverWaveDir2                         (optnum)  0x827C93C0
+PushForeverWaveLength1                      (optnum)  0x827C8490
+PushForeverWaveLength2                      (optnum)  0x827C9138
+PushForeverWaveSpeed1                       (optnum)  0x827C89A0
+PushForeverWaveSpeed2                       (optnum)  0x827C9648
+PushForeverWaveStrength1                    (optnum)  0x827C8C28
+PushForeverWaveStrength2                    (optnum)  0x827C98D0
+PushForeverWaveTilt1                        (optnum)  0x827C8EB0
+PushForeverWaveTilt2                        (optnum)  0x827C9B58
+PushForeverWaveYScale                       (optnum)  0x827C8208
+PushMatrix                                  ()  0x827A2FE8
+PushMiniGameInput                           (actor, bool) -> bool  0x825B9C68
+QuatMulQuat                                 (obj, obj)  0x827A3D18
+QuatMulVec                                  (obj, obj)  0x827A3DA0
+QuatSlerp                                   (obj, obj, num)  0x827A3E20
+QuatToMatrix                                (obj)  0x827A41F8
+Quit                                        ()  0x8279E0F8
+RShift                                      (optnum, optnum)  0x8279C118
+Random0to1                                  ()  0x8279C388
+Random0toX                                  (num)  0x8279C448
+RandomInt0toX                               (int) -> int  0x8279C6B0
+RandomIntXtoY                               (int, int) -> int  0x8279C5E0
+RandomNeg1to1                               ()  0x8279C3E8
+RandomNegXtoX                               (num)  0x8279C4C8
+RandomPositionInRadius                      (obj, num)  0x827A47A8
+RandomXtoY                                  (num, num)  0x8279C548
+RayCast                                     (obj, num) -> bool  0x827BE328
+ReLoadWorld                                 ()  0x8279D2B8
+RecordProfile                               (string, int)  0x8279E3D8
+RecycleRen                                  (actor)  0x825C4BB8
+ReleaseBehaviorData                         (int)  0x825B7D90
+ReloadBehaviors                             (actor, string) -> bool  0x827D35A8
+ReloadTestBehaviors                         (string)  0x82798B98
+RelockAllInCategory                         (actor)  0x825BB1D0
+RelockAllPackages                           (actor)  0x825BB2D8
+RemoveAllCollisionListeners                 (actor) -> bool  0x827BD2C8
+RemoveAllInfluences                         ()  0x825B9708
+RemoveBehaviorListener                      (actor) -> bool  0x827D3228
+RemoveCollisionFlags                        (actor, int) -> bool  0x827BBEC8
+RemoveCollisionListener                     (actor) -> bool  0x827BD348
+RemoveCollisionType                         (actor, int) -> bool  0x827BC0F0
+RemoveController                            (actor)  0x827DA668
+RemoveFromWorld                             (actor) -> bool  0x827AFBB8
+RemoveInfluence                             (actor)  0x825B96A8
+ReplaceGripped                              (actor, actor) -> bool  0x825B9B90
+RequestAbilityChange                        (actor, string, string, num, int, int) -> bool  0x825C5A68
+RequestAbilityChangeEx                      (actor, int, string, string, num, int, int) -> bool  0x825C4EF0
+RequestAbilityChangeWithProbability         (actor, num, string, string, num, int, int) -> bool  0x825C5C78
+RequestAbilityChangeWithProbabilityEx       (actor, num, int, int, string, string, num, int, int) -> bool  0x825C5130
+RequestFaceTarget                           (actor, actor)  0x825C9DD8
+RequestMoveToTarget                         (actor, actor, optnum, int) -> bool  0x825C9B28
+RequestOrbitTarget                          (actor, actor, bool, optnum, int) -> bool  0x825C9CC0
+RequestPathToPosition                       (actor, obj, int) -> bool  0x825C9BE8
+RequestRespawn                              (actor) -> int  0x825BD6F8
+Reset                                       (actor)  0x827DCCE8
+ResetAdvancedPowerIcons                     (actor)  0x825BCBF0
+ResetAll                                    (int)  0x8279A7A0
+ResetCollisionListener                      (actor) -> bool  0x827BD7C0
+ResetPlayerMovementVelocity                 (actor)  0x825BA840
+ResetSpawner                                (actor)  0x825B7BF0
+ResetStationaryTimers                       (actor)  0x827D3B90
+RestoreAI                                   (actor) -> bool  0x825B7B28
+RestoreAllHiddenDynamicObjects              ()  0x827DC118
+RestoreGameState                            ()  0x827D7BF8
+RestoreOriginalBrain                        (actor)  0x825C3DE8
+Resume                                      (actor, num, int)  0x827E0BE0
+ResumeAll                                   (num, int)  0x8279A808
+Resurrect                                   (actor)  0x825C3A38
+ReturnFromBehaviorControl                   (actor, num) -> bool  0x827D34B0
+RewardForcePoints                           (actor, num, string, actor)  0x825B9AA0
+RewardMessage                               (string)  0x827A0ED0
+RewardSecObj                                ()  0x825BBBE8
+RotMatrixFromLookAt                         (obj)  0x827AB9A0
+RunCut                                      (string)  0x8279D418
+RunEdl                                      (string) -> int  0x827E2F50
+SaberNotAllowedClose                        (actor)  0x825C2410
+SaberNotAllowedOpen                         (actor)  0x825C2380
+SaberRequiredClose                          (actor)  0x825C22F0
+SaberRequiredOpen                           (actor)  0x825C2260
+SaberSwing                                  ()  0x825C3320
+SaberThrow                                  ()  0x825C3348
+Save                                        () -> bool  0x825B9518
+SaveGameClrBits                             (int, int)  0x825BC220
+SaveGameSetBits                             (int, int)  0x825BC1B0
+SaveTest                                    ()  0x8279DED0
+ScriptExists                                (string) -> bool  0x827A17B0
+SecondaryObjectiveMessage                   (string)  0x827A0F90
+SendMsg                                     (actor, actor, string)  0x827B0A40
+SetAA                                       (int)  0x8279B398
+SetAITetherInnerRadius                      (num)  0x825C7A30
+SetAITetherOuterRadius                      (num)  0x825C7A98
+SetAITetherRenID                            (actor)  0x825C79B0
+SetAdditionalMoveOffset                     (actor, obj)  0x827BBAC0
+SetAdjustColorBalanceAmount                 (optnum)  0x827C68B8
+SetAdjustColorBalanceBias                   (optnum)  0x827C63A8
+SetAdjustColorBalanceCMY                    (obj)  0x827C6048
+SetAdjustColorBalancePreserveLuminosity     (optnum)  0x827C6630
+SetAdjustColorBalanceRGB                    (obj)  0x827C5CE8
+SetAdjustDesaturationAmount                 (optnum)  0x827C6EA0
+SetAdjustDesaturationColor                  (obj)  0x827C6B40
+SetAdjustLayersAmount                       (optnum)  0x827C7F80
+SetAdjustLevelsInAmount                     (optnum)  0x827C5A60
+SetAdjustLevelsInMax                        (optnum)  0x827C57D8
+SetAdjustLevelsInMaxRGB                     (obj)  0x827C51F0
+SetAdjustLevelsInMin                        (optnum)  0x827C5550
+SetAdjustLevelsInMinRGB                     (obj)  0x827C4E90
+SetAdjustLevelsOutAmount                    (optnum)  0x827C7CF8
+SetAdjustLevelsOutMax                       (optnum)  0x827C7A70
+SetAdjustLevelsOutMaxRGB                    (obj)  0x827C7488
+SetAdjustLevelsOutMin                       (optnum)  0x827C77E8
+SetAdjustLevelsOutMinRGB                    (obj)  0x827C7128
+SetAffectsObjectsWithIBL                    (actor, bool)  0x827DE238
+SetAllAsEnemies                             ()  0x8279E6F8
+SetAlphaFade                                (actor, optnum, bool)  0x827AFDD0
+SetAmbientFalloff                           (actor, obj)  0x827DE4C8
+SetAngularDamping                           (actor, num) -> bool  0x827BDED0
+SetAngularDampingPhysicsEntity              (udata, num) -> bool  0x8279C9A8
+SetAngularVelocity                          (actor, obj)  0x827BE0C0
+SetAngularVelocityPhysicsEntity             (obj) -> bool  0x827ADA40
+SetAnimParamSetterControl                   (actor, num)  0x825C2978
+SetAnimStringAttr                           (int, int, int, int, string, string)  0x827E1DD0
+SetApproximated                             (actor, bool)  0x827DE0F8
+SetAsset                                    (actor, string)  0x827DB820
+SetAttributesDraw                           (actor, bool)  0x827BB948
+SetBehaviorPoolSizes                        (int, int, int, int, int, int, int, int)  0x82798C60
+SetBehaviorRecoveryParameters               (actor, optnum, optnum)  0x825C37B8
+SetBlockParams                              (actor, string, string) -> bool  0x827B7250
+SetBool                                     (string, string, bool)  0x8279ED10
+SetBossMeter                                (bool, actor, string) -> bool  0x827B19E8
+SetBossMeterName                            (string) -> bool  0x8279FD28
+SetBossName                                 (string) -> bool  0x827A0610
+SetCaptureFrameNumber                       (int)  0x8279E1A8
+SetCaptureFrameNumberState                  (int)  0x8279E228
+SetCastLightmapShadows                      (actor, bool)  0x827DDE78
+SetCastShadows                              (actor, bool)  0x827DDD38
+SetCastsIBL                                 (actor, bool)  0x827DE378
+SetCharacterCapsuleRadiusAndHeight          (actor, num, num) -> bool  0x827BCF70
+SetCharacterPushStrength                    (actor, num) -> bool  0x827BCEE0
+SetCharacterShape                           (actor, string, bool) -> bool  0x827BCE28
+SetChoreSet                                 (udata, string) -> int  0x82798FA8
+SetCinematicDudeBackToMobileAgain           (actor)  0x827BA360
+SetCinematicMode                            ()  0x82BA24B8
+SetCleanupMaxVelocity                       (actor, num)  0x827BEEE8
+SetCleanupTime                              (actor, num)  0x827BEE68
+SetClearColor                               (obj)  0x827C4B30
+SetClothBodyBindingTweakValue               (actor, string, optnum, optnum)  0x827D75C0
+SetCollisionFlag                            (actor, int)  0x827BED40
+SetCollisionFlags                           (actor, int) -> bool  0x827BBDB8
+SetCollisionFlagsPhysicsEntity              (udata, int) -> bool  0x8279CA30
+SetCollisionGroup                           (actor, int)  0x827B9A38
+SetCollisionType                            (actor, int) -> bool  0x827BBFE0
+SetColor                                    (actor, obj)  0x827DD468
+SetCompositingMaskMode                      (int)  0x8279BCC8
+SetConeScale                                (actor, num)  0x827DDA78
+SetConsoleTextColor_Blue                    (bool)  0x8279DB00
+SetConsoleTextColor_Cyan                    (bool)  0x8279DB00
+SetConsoleTextColor_Gray                    (bool)  0x8279DB00
+SetConsoleTextColor_Gree                    (bool)  0x8279DB00
+SetConsoleTextColor_Magenta                 (bool)  0x8279DB00
+SetConsoleTextColor_Red                     (bool)  0x8279DB00
+SetConsoleTextColor_Yellow                  (bool)  0x8279DB00
+SetCustomOutro                              (string)  0x8279D340
+SetDebugDraw                                (bool)  0x8279D900
+SetDebugDrawGravity                         (bool)  0x8279D948
+SetDepthOfFieldBlurPasses                   (optnum)  0x827C0600
+SetDepthOfFieldFarBlurAmount                (optnum)  0x827BFBE0
+SetDepthOfFieldFarBlurDistance              (optnum)  0x827BF958
+SetDepthOfFieldNearBlurAmount               (optnum)  0x827C0378
+SetDepthOfFieldNearBlurDistance             (optnum)  0x827C00F0
+SetDepthOfFieldNearBlurPlane                (optnum)  0x827BFE68
+SetDesiredAbility                           (actor, string, string)  0x825B7C28
+SetDifficulty                               (int)  0x825BBE38
+SetDiffuse                                  (actor, obj)  0x827DD330
+SetDoUpgradeTutorial                        ()  0x827A0FF0
+SetDrawStatusBar                            (actor, int)  0x825C99C0
+SetDriven                                   (actor, bool) -> bool  0x827D2220
+SetDropFromHanging                          (actor, bool) -> bool  0x827D4D38
+SetEdgesLocal                               (actor) -> bool  0x827DAFC8
+SetEffectColor                              (actor, obj)  0x827DE968
+SetEffectColorEffectGlobalLight             (actor, int)  0x827DE6E8
+SetEffectColorEffectType                    (actor, int)  0x827DE808
+SetEffectFadeTime                           (actor, num)  0x827DEE60
+SetEffectFlickerProbability                 (actor, num)  0x827DF6A0
+SetEffectFlickerSpeed                       (actor, num)  0x827DF598
+SetEffectIntensity                          (actor, num)  0x827DEAA0
+SetEffectMoveDistanceX                      (actor, num)  0x827DFA38
+SetEffectMoveDistanceY                      (actor, num)  0x827DFB40
+SetEffectMoveDistanceZ                      (actor, num)  0x827DFC48
+SetEffectMoveEffectType                     (actor, int)  0x827DF7E8
+SetEffectMoveInLocalSpace                   (actor, bool)  0x827DF910
+SetEffectMoveSpeedX                         (actor, num)  0x827DFD50
+SetEffectMoveSpeedY                         (actor, num)  0x827DFE58
+SetEffectMoveSpeedZ                         (actor, num)  0x827DFF60
+SetEffectOffDelay                           (actor, num)  0x827DF280
+SetEffectOffFlicker                         (actor, num)  0x827DF490
+SetEffectOffVariance                        (actor, num)  0x827DF388
+SetEffectOnDelay                            (actor, num)  0x827DEF68
+SetEffectOnFlicker                          (actor, num)  0x827DF178
+SetEffectOnVariance                         (actor, num)  0x827DF070
+SetEffectProjTextureSpeedX                  (actor, num)  0x827E06D8
+SetEffectProjTextureSpeedY                  (actor, num)  0x827E07E0
+SetEffectProjTextureTileX                   (actor, num)  0x827E08E8
+SetEffectProjTextureTileY                   (actor, num)  0x827E09F0
+SetEffectRotateEffectType                   (actor, int)  0x827E0068
+SetEffectRotateInLocalSpace                 (actor, bool)  0x827E0190
+SetEffectRotateSpeedX                       (actor, num)  0x827E02B8
+SetEffectRotateSpeedY                       (actor, num)  0x827E03C0
+SetEffectRotateSpeedZ                       (actor, num)  0x827E04C8
+SetEffectRotateSweepAngle                   (actor, num)  0x827E05D0
+SetEffectStartRandom                        (actor, bool)  0x827DECF8
+SetEffectStartTime                          (actor, num)  0x827DEBA8
+SetEnabled                                  (actor, bool)  0x827DD0F8
+SetFOV                                      (num) -> bool  0x82799A48
+SetFactionDamageMultiplier                  (string, string, num) -> bool  0x8279E598
+SetFactionInaccuracyMultiplier              (string, string, num) -> bool  0x8279E648
+SetFactionState                             (string, string, string) -> bool  0x8279E4B0
+SetFarClip                                  (optnum)  0x827C4620
+SetFirstLevelUp                             ()  0x827A0BD0
+SetFloat                                    (string, string, optnum)  0x8279EEA8
+SetFlyMode                                  (optnum) -> bool  0x827997C8
+SetFogClipOffset                            (optnum)  0x827C27C0
+SetFogColor                                 (obj)  0x827C1F50
+SetFogDensity                               (optnum)  0x827C2A48
+SetFogFar                                   (optnum)  0x827C2538
+SetFogNear                                  (optnum)  0x827C22B0
+SetFogPlane                                 (optnum, optnum)  0x827BF620
+SetFogType                                  (optnum)  0x827C2CD0
+SetFollowDist                               (optnum)  0x827996F8
+SetFollowNear                               (bool)  0x827AA308
+SetFollowTargOffset                         (obj)  0x827AA368
+SetForceBlockAbility                        (actor, int, string, string)  0x825C7470
+SetForceBlockPercentage                     (actor, int, num)  0x825C7250
+SetForceBlockingEnabled                     (actor)  0x825C7660
+SetForceCorruptionRank                      (int, int)  0x825C2710
+SetForceCounterAbility                      (actor, int, string, string)  0x825C7568
+SetForceCounterPercentage                   (actor, int, num)  0x825C7360
+SetForceGripRank                            (int, int)  0x825C2890
+SetForceLightningRank                       (int, int)  0x825C2590
+SetForceLocksAvailable                      (int, bool)  0x825BC970
+SetForcePushRank                            (int, int)  0x825C2690
+SetForceRanks                               (int, int)  0x825C2510
+SetForceRepulseRank                         (int, int)  0x825C2790
+SetForceSpamCounterEnabled                  (actor)  0x825C7718
+SetForceStormRank                           (int, int)  0x825C2610
+SetForward                                  (actor, obj)  0x827D81C8
+SetFriction                                 (actor, num) -> bool  0x827BDA50
+SetFrictionPhysicsEntity                    (udata, num) -> bool  0x8279C828
+SetGrabStrength                             (actor, num)  0x827D2D20
+SetGravity                                  (obj) -> bool  0x827AD408
+SetGravityCamChange                         (num, num) -> bool  0x82799C80
+SetGravityCamInit                           (obj) -> bool  0x827AA520
+SetGravityCamPOV                            (obj) -> bool  0x827AA658
+SetGustDuration                             (optnum)  0x827CA800
+SetGustDurationVariety                      (optnum)  0x827CA2F0
+SetGustLikelyHood                           (optnum)  0x827C9DE0
+SetGustSpeed                                (optnum)  0x827CAD10
+SetGustSpeedVariety                         (optnum)  0x827CA578
+SetGustStrength                             (optnum)  0x827CAA88
+SetGustStrengthVariety                      (optnum)  0x827CA068
+SetGustTilt                                 (optnum)  0x827CAF98
+SetHdrAutoExposureClampMax                  (optnum)  0x827C3468
+SetHdrAutoExposureClampMin                  (optnum)  0x827C31E0
+SetHdrAutoExposureLag                       (optnum)  0x827C36F0
+SetHdrAutoExposureRangeMax                  (optnum)  0x827C3C00
+SetHdrAutoExposureRangeMin                  (optnum)  0x827C3978
+SetHdrBloomAmount                           (optnum)  0x827C3E88
+SetHdrBloomDistance                         (optnum)  0x827C4398
+SetHdrBloomThreshold                        (optnum)  0x827C4110
+SetHdrExposure                              (optnum)  0x827C2F58
+SetInSignalOneFrame                         (actor)  0x825C1750
+SetInertiaInvLocal                          (actor, obj2) -> bool  0x827BC6B0
+SetInertiaLocal                             (actor, obj2) -> bool  0x827BC8D0
+SetInertiaLocalRPE                          (obj2)  0x827A4D20
+SetInnerConeAngle                           (actor, num)  0x827DD898
+SetInnerRadius                              (actor, num)  0x827DD6B8
+SetIntensity                                (actor, num)  0x827DD5C8
+SetInvincible                               (int, bool)  0x825CCFB0
+SetIsFlying                                 (actor, bool)  0x825C7190
+SetKnockdownMass                            (actor, num) -> bool  0x825C3B80
+SetKnockdownVelocity                        (actor, num) -> bool  0x825C3C00
+SetKnotTangent                              (actor, optnum, obj) -> bool  0x827D9F60
+SetKnotTangentAtChannel                     (actor, optnum, int, optnum, optnum, optnum, optnum) -> bool  0x827DA0A0
+SetLanguage                                 (string)  0x8279F248
+SetLastAbilityScaleFactor                   (actor)  0x825C64E0
+SetLightRotation                            (actor, obj)  0x827BA198
+SetLightTransform                           (actor)  0x827BA118
+SetLinearDamping                            (actor, num) -> bool  0x827BDF68
+SetLinearDampingPhysicsEntity               (udata, num) -> bool  0x8279C920
+SetLinearVelocity                           (obj) -> bool  0x827E10B0
+SetLinearVelocityPhysicsEntity              (obj) -> bool  0x827AD9B8
+SetMass                                     (actor, num) -> bool  0x827BC588
+SetMassPhysicsEntity                        (udata, num) -> bool  0x8279C898
+SetMaterialPropertyBoolean                  (actor, string, string, bool, num)  0x827B8838
+SetMaterialPropertyExactSubmeshBoolean      (actor, string, string, bool, num)  0x827B8D68
+SetMaterialPropertyExactSubmeshFloat        (actor, string, string, num, num)  0x827B9000
+SetMaterialPropertyExactSubmeshInt          (actor, string, string, num, num)  0x827B8EB8
+SetMaterialPropertyExactSubmeshVector       (actor, string, string, obj, num)  0x827B9140
+SetMaterialPropertyFloat                    (actor, string, string, num, num)  0x827B8AD0
+SetMaterialPropertyInt                      (actor, string, string, num, num)  0x827B8988
+SetMaterialPropertyVector                   (actor, string, string, obj, num)  0x827B8C10
+SetMaterialValue                            (string, int, optnum)  0x8279A460
+SetMatrixFromCameraAnimation                (string, optnum)  0x827ABAA8
+SetMatrixFromPropAnimation                  (string, optnum)  0x827AC140
+SetMatrixIdentity                           ()  0x827A3090
+SetMaxAngularVelocity                       (actor, num) -> bool  0x827BE290
+SetMaxFov                                   (num) -> bool  0x825B9430
+SetMaxHealth                                (actor, optnum)  0x825CA7E0
+SetMaxLinearVelocity                        (actor, num) -> bool  0x827BE1F8
+SetMaxTargetSpeed                           (optnum, int)  0x82799768
+SetMinFov                                   (num) -> bool  0x825B9348
+SetMindState                                (actor, int)  0x825C43A8
+SetMiniGameStickPosition                    (actor, optnum, optnum)  0x825BCC30
+SetMotionBlurAmount                         (optnum)  0x827C0B10
+SetMotionBlurCenterPoint                    (obj)  0x827C1458
+SetMotionBlurDeformDirection                (obj)  0x827C0D98
+SetMotionBlurDeformScale                    (obj)  0x827C10F8
+SetMotionBlurEnabled                        (optnum)  0x827C0888
+SetMotionBlurEndFade                        (optnum)  0x827C1A40
+SetMotionBlurGreyScaleAmt                   (optnum)  0x827C1CC8
+SetMotionBlurStartFade                      (optnum)  0x827C17B8
+SetMoveOffset                               (actor, obj)  0x827BBAC0
+SetMoveSpeed                                (optnum)  0x82799890
+SetNearClip                                 (optnum)  0x827C48A8
+SetNumPrimaryObjStep                        (int) -> bool  0x827A0AF0
+SetNumSecondaryObjStep                      (int) -> bool  0x827A0A60
+SetObjectiveTrackable                       (actor, bool) -> bool  0x825CAD88
+SetOffset                                   (actor, int, obj)  0x827DAEA0
+SetOrbit                                    (num, int)  0x82799BB0
+SetOrbitToLookAt                            (actor) -> bool  0x825BD368
+SetOutSignal                                (actor, int) -> bool  0x825C17E8
+SetOuterConeAngle                           (actor, num)  0x827DD988
+SetOuterRadius                              (actor, num)  0x827DD7A8
+SetPath                                     (string)  0x8279F1E8
+SetPatrolPath                               () -> bool  0x825B73E0
+SetPerspectiveProjection                    (num, num, num, num)  0x82799638
+SetPitch                                    (num, int)  0x82799C18
+SetPitchSpeed                               (optnum)  0x82799968
+SetPlayerController                         (actor, int)  0x825BC380
+SetPlayerHeightOffset                       (optnum)  0x827CB730
+SetPlayerRadius                             (optnum)  0x827CB220
+SetPlayerStrength                           (optnum)  0x827CB4A8
+SetPosFixed                                 (actor, bool, num)  0x827B7DC0
+SetPosition                                 (actor, obj)  0x827BA6B8
+SetPrimaryObj                               (string, string) -> bool  0x827A0468
+SetPrimaryObjActual                         (string) -> bool  0x827A0610
+SetPrimaryObjStep                           (int) -> bool  0x827A0738
+SetProbabilityQueueName                     (actor)  0x825C6420
+SetProjTexName                              (actor, string)  0x827DE5C0
+SetProjTexTileX                             (actor, num)  0x827E08E8
+SetProjTexTileY                             (actor, num)  0x827E09F0
+SetProjTexture                              (actor, string)  0x827DE5C0
+SetPushRadius                               (optnum)  0x827CB9B8
+SetPushSpringBackSpeed                      (optnum)  0x827CC3D8
+SetPushSpringFriction                       (optnum)  0x827CC660
+SetPushStrength                             (optnum)  0x827CBC40
+SetPushVertFlatness                         (optnum)  0x827CBEC8
+SetPushVertStrength                         (optnum)  0x827CC150
+SetRadius                                   (actor, num) -> bool  0x827D20C0
+SetRenAlphaValue                            (actor, optnum)  0x825BBA80
+SetRenAsBossCamTarget                       (actor, bool)  0x825BD2E0
+SetRenFaction                               (actor, string)  0x827D98A8
+SetRenFactionId                             (actor, int)  0x827D9940
+SetRenTransform                             (actor, bool)  0x827D7FD0
+SetRestitution                              (actor, num) -> bool  0x827BEB68
+SetRootPosXYZ                               (optnum, optnum, optnum)  0x8279B518
+SetRootRotYPR                               (optnum, optnum, optnum)  0x8279B590
+SetRotationAxisAngle                        (actor, obj)  0x827BAD68
+SetRotationEuler                            (actor, obj, string)  0x827BA9E8
+SetRotationPhysicsEntity                    (udata, obj) -> bool  0x827AD358
+SetRotationYPRDegrees                       (actor)  0x827BACC8
+SetRotationYPRRadians                       (actor)  0x827BAC28
+SetSaberLocksAvailable                      (int, bool)  0x825BC8D8
+SetSaberThrowRank                           (int, int)  0x825C2810
+SetScale                                    (actor, obj)  0x827DB8B0
+SetScriptControlBrain                       (actor)  0x825C67D8
+SetSecondaryObj                             (string) -> bool  0x827A02C8
+SetSecondaryObjStep                         (int) -> bool  0x827A0938
+SetSecondaryObjectiveStatus                 (udata, bool)  0x825CAE30
+SetSector                                   (actor, string)  0x827BA740
+SetShadowAlpha                              (actor, num)  0x827DDB60
+SetShadowBias                               (optnum)  0x8279B480
+SetShadowNear                               (optnum)  0x8279B4E8
+SetShadowOnly                               (actor, bool)  0x827DDFB8
+SetShadowScale                              (actor, num)  0x827DDA78
+SetShadowSplit                              (actor, num)  0x827DDC48
+SetShadowSplitFar                           (actor, num)  0x827DDC48
+SetShape                                    (actor, udata)  0x827BDDC0
+SetShouldMeleeCounter                       (actor, bool)  0x825C6D08
+SetShowOnlyCineMarkersets                   (bool)  0x8279B148
+SetSignal                                   (actor, int) -> bool  0x825C1690
+SetSocialFlags                              (actor, int)  0x827D9830
+SetSpeed                                    (actor, int, optnum, bool)  0x827DAC80
+SetStationaryTimers                         (actor, num, num, num, bool)  0x827D39F0
+SetStrafeSpeed                              (optnum)  0x827998F8
+SetString                                   (string, string, string)  0x8279F040
+SetSuspended                                (actor, int)  0x827B0570
+SetTarget                                   (obj, bool, num)  0x827B81D8
+SetTargetDirection                          (obj, bool)  0x827AA3D8
+SetTargetPriority                           (actor, int)  0x827D9A30
+SetTime                                     (actor, int, optnum)  0x827DAD28
+SetTimeScale                                (optnum)  0x8279E378
+SetTransform                                (actor, obj2)  0x827BA848
+SetTransformAndVelocity                     (actor, obj2)  0x827D2130
+SetTutorialStatus                           (int, int, bool)  0x825BC840
+SetType                                     (actor, int)  0x827DD228
+SetTypesAndFlagsDraw                        (actor, bool)  0x827BB898
+SetUpBoneCamera                             (actor, string, actor, string, num, actor) -> bool  0x825B8C40
+SetUpBossAxisCamera                         (num, num, num, num) -> bool  0x825B91D8
+SetUpBossCamera                             (actor, actor, actor, num, num, num, num) -> bool  0x825B8DC0
+SetUpBossSplineCamera                       (actor, actor, actor, num, num, num, num) -> bool  0x825B8DC0
+SetUpMpArenaCamera                          (actor, actor, num) -> bool  0x825B8F78
+SetUpMpAxisCamera                           (num, num, num, num) -> bool  0x825B9060
+SetUpMpSplineCamera                         (actor, actor, num) -> bool  0x825B8F78
+SetUpScriptCamera                           (actor, actor, num) -> bool  0x825BEB78
+SetUpwardVelocity                           (actor, optnum)  0x825BCB08
+SetVerbosity                                (int)  0x82799220
+SetVolume                                   (actor, obj, obj, string, int, string) -> bool  0x827DBA30
+SetWaveDir1                                 (optnum)  0x827C8718
+SetWaveDir2                                 (optnum)  0x827C93C0
+SetWaveLength1                              (optnum)  0x827C8490
+SetWaveLength2                              (optnum)  0x827C9138
+SetWaveSpeed1                               (optnum)  0x827C89A0
+SetWaveSpeed2                               (optnum)  0x827C9648
+SetWaveStrength1                            (optnum)  0x827C8C28
+SetWaveStrength2                            (optnum)  0x827C98D0
+SetWaveTilt1                                (optnum)  0x827C8EB0
+SetWaveTilt2                                (optnum)  0x827C9B58
+SetWaveYScale                               (optnum)  0x827C8208
+SetWeaponAttachmentPoint                    (actor, string, string)  0x825CD488
+SetWind                                     (actor, optnum, optnum, optnum)  0x827D55F8
+SetYawSpeed                                 (optnum)  0x827999D8
+Set_WireframeMode                           (actor, int, optnum)  0x827D5360
+Set_mBendingCompSpringCo                    (actor, int, optnum)  0x827D6498
+Set_mBindingFreezeThreshold                 (actor, int, optnum)  0x827D7240
+Set_mBindingSkinningThreshold               (actor, int, optnum)  0x827D7148
+Set_mBindingSkinningTweakValue              (actor, int, optnum)  0x827D7528
+Set_mBodyAccurateRepulsion                  (actor, int, optnum)  0x827D59D0
+Set_mBodyInterpenetrationsDisallowed        (actor, int, optnum)  0x827D5AF0
+Set_mBracketBindingMaxVal                   (actor, int, optnum)  0x827D7430
+Set_mBracketBindingMinVal                   (actor, int, optnum)  0x827D7338
+Set_mClothDensity                           (actor, int, optnum)  0x827D6590
+Set_mCollideRepulsionMaxDist                (actor, int, optnum)  0x827D6F58
+Set_mCollideRepulsionSprStr                 (actor, int, optnum)  0x827D7050
+Set_mCompressionSpringAdjCo                 (actor, int, optnum)  0x827D61A8
+Set_mCompressionSpringCoMax                 (actor, int, optnum)  0x827D60B0
+Set_mCompressionSpringCoMin                 (actor, int, optnum)  0x827D5FB8
+Set_mDampCo                                 (actor, int, optnum)  0x827D63A0
+Set_mExpansionSpringAdjCo                   (actor, int, optnum)  0x827D5DC0
+Set_mExpansionSpringCoMax                   (actor, int, optnum)  0x827D5CC8
+Set_mExpansionSpringCoMin                   (actor, int, optnum)  0x827D5BD0
+Set_mFrictionCoeff                          (actor, int, optnum)  0x827D6E60
+Set_mGravityMult                            (actor, int, optnum)  0x827D6698
+Set_mMaxPostCollisionAdjust                 (actor, int, optnum)  0x827D6D60
+Set_mNeutralCompSpringCo                    (actor, int, optnum)  0x827D62A0
+Set_mNeutralExpLengthScale                  (actor, int, optnum)  0x827D5EB8
+Set_mSelfCollisionRepulseExclDist           (actor, int, optnum)  0x827D6B70
+Set_mSelfCollisionRepulseStr                (actor, int, optnum)  0x827D6C68
+Set_mSelfCollisionRepulsionDist             (actor, int, optnum)  0x827D6A70
+Set_mSkinnedVertRestorationDamp             (actor, int, optnum)  0x827D6868
+Set_mSkinnedVertRestorationRopeLen          (actor, int, optnum)  0x827D6960
+Set_mSkinnedVertRestorationStr              (actor, int, optnum)  0x827D6770
+Set_mUsesBodyAccurateCollision              (actor, int, optnum)  0x827D58B0
+Set_mUsesSelfCollision                      (actor, int, optnum)  0x827D5790
+Setdcp                                      (int, int, optnum)  0x82799558
+SetupPrimaryObj                             (string) -> bool  0x827A03B8
+SetupSecondaryObj                           (int, string) -> bool  0x827A01A0
+Show                                        (string)  0x8279F518
+ShowButtonMiniGame                          (bool)  0x8279F858
+ShowLevelUpIcon                             (bool)  0x827A0DF8
+ShowSubtitle                                (string, optnum)  0x8279F5D8
+ShowTimerMeter                              (optnum) -> bool  0x8279FB88
+ShowTrainingBox                             (string, string, string, string, string, string)  0x8279F9A0
+ShowTutorialBox                             (string)  0x8279F918
+ShowTutorialMenuButton                      (string, string, string, string)  0x8279FC10
+SimulateExplosion                           (obj, num, string)  0x827E1320
+SmartFollow                                 (actor, bool)  0x827B8440
+SnapInDirection                             (obj)  0x827DBDE8
+Start                                       (actor, string)  0x827DB618
+StartAIAnimation                            (actor, bool)  0x825B8A28
+StartAIDriverAnimation                      (actor, actor)  0x825C92E0
+StartBehavior                               (actor, string, bool, bool) -> bool  0x827D2FF0
+StartBehaviorAnimOverlay                    (actor, string, string, string)  0x827D3D88
+StartBlock                                  (actor, bool) -> bool/int  0x827D3FF8
+StartBlockSingleAnim                        (actor, bool, num) -> bool/int  0x827D4208
+StartButtonMashTest                         (actor, int, optnum, optnum, optnum, optnum, optnum, bool, bool) -> bool  0x825BA058
+StartButtonMatchTest                        (actor, int, optnum, bool) -> bool  0x825B9D40
+StartButtonSwingMeterTest                   (actor, int, optnum, optnum, optnum, int, bool, bool) -> bool  0x825B9E68
+StartCameraShake                            (int, string) -> int  0x827D1E68
+StartLightningOnCharcter                    (actor)  0x827B3930
+StartMovieCapture                           (string)  0x8279E110
+StartPIXCapture                             ()  0x82BA24B8
+StartSDBattleMinigame                       ()  0x827A0B80
+StartShake                                  (actor, string) -> int  0x827D13B0
+StartSinglePlayerGame                       (int, int) -> int  0x825BC068
+StartSkinningTweak                          (string, int, optnum, optnum)  0x827D5500
+StartStickRockTest                          (actor, int, int, optnum, optnum, optnum, optnum, optnum, optnum, optnum, bool, bool) -> bool  0x825BA378
+StartStickStruggleTest                      (actor, int, optnum, optnum, optnum, optnum, optnum, optnum, optnum, optnum, optnum, optnum) -> bool  0x825BA4C8
+StartStickSwipeTest                         (actor, int, optnum, optnum, optnum, bool) -> bool  0x825BA218
+StartTestBehavior                           (actor, int)  0x827B7160
+StationaryTimersExpired                     (actor, num) -> bool  0x827D3AE8
+Stop                                        (actor, string)  0x827E4850
+StopAIDriverAnimation                       (actor, actor)  0x825C9440
+StopAll                                     (actor)  0x827DB948
+StopAllBehaviors                            (actor) -> bool  0x827D3540
+StopAllEDLs                                 ()  0x827994A8
+StopAllMusic                                ()  0x827993B8
+StopBehavior                                (actor, string) -> bool  0x827D33B0
+StopCameraShake                             (int)  0x827D15B0
+StopEDL                                     (string)  0x82799518
+StopEdl                                     ()  0x8279B2A0
+StopEvent                                   (actor, string)  0x827E4BB8
+StopForceGrip                               (int)  0x825C3458
+StopLightning                               (string, actor, actor)  0x827B3880
+StopLightningOnCharcter                     (actor)  0x827B39C8
+StopMovieCapture                            ()  0x8279E188
+StopMusic                                   (int, string, string, optnum)  0x827992E8
+StopPIXCapture                              ()  0x82BA24B8
+StopShake                                   (int)  0x827D15B0
+StopTestBehavior                            (actor, int)  0x827B71D8
+StoreGameState                              (int)  0x827D7678
+Succeed                                     ()  0x82BA24B8
+SupportedBy                                 (actor)  0x827BB9F8
+SuppressForceLockMiniGame                   (bool)  0x827D2960
+SuppressSaberLockMiniGame                   (bool)  0x8279FB20
+SweptSphereCheck                            (obj, int, num, bool) -> bool  0x827BE6A8
+SwingMeterBeginMsg                          ()  0x827A0060
+SwingMeterButtonPressed                     (string)  0x8279FF48
+SwingMeterSetResult                         (bool)  0x8279FFE0
+SwingMeterSetTime                           (optnum)  0x8279FED8
+SwingMeterSetup                             (string, optnum, optnum, optnum)  0x8279FDD0
+TargetPractice                              (actor, actor, string, string) -> bool  0x825C3D08
+TargetTransform                             (actor, obj2) -> bool  0x827BD938
+TargetWithinRange                           (actor, num, num) -> bool  0x825C4640
+Teleport                                    (actor)  0x827D8428
+TeleportNext                                ()  0x825C3370
+TeleportPrev                                ()  0x825C33A8
+TeleportTransform                           (actor)  0x827D86A0
+Terminate                                   (actor, string)  0x827DB780
+TerminateAll                                (actor) -> bool  0x827B35B8
+TimeReport                                  ()  0x82BA24B8
+ToggleDebugDraw                             (actor)  0x827D9770
+ToggleDebugInfo                             ()  0x827186E0
+ToggleEdgeDebugging                         (actor)  0x827B17F0
+ToggleMemoryReporting                       ()  0x8279A5E0
+ToggleMenu                                  ()  0x8279A340
+ToggleStepTimes                             ()  0x8279A5C0
+ToggleTraceChannel                          (string)  0x8279DB38
+TraceDump                                   (string)  0x8279DB38
+TrackSpeciaCaseKills                        (string)  0x825B9998
+TrailActivate                               (actor, string, string, bool)  0x827D0E48
+TrailDestroy                                (actor, string, string)  0x827B3AA0
+TrailSetDuration                            (actor, string, string, int, optnum)  0x827D0EF0
+TransformVector                             (obj2, obj)  0x827A3E98
+Trigger                                     (string, obj) -> bool  0x827B3618
+TriggerAchievement                          (int)  0x8279E010
+TriggerAutoSave                             ()  0x827A0DD0
+TriggerCameraShake                          (int, string)  0x827D1D88
+TriggerCameraShakeCurve                     (obj, int, num, num, num, num, num, num, int, int, num, num, int)  0x825C1A58
+TriggerDisintegrateVFX                      (actor, string)  0x827B3E00
+TriggerEvent                                (int, int, int, string) -> bool  0x8279B2F8
+TriggerLevelMessage                         (int, int, int)  0x827A0E30
+TriggerLightning                            (string, actor, actor, optnum, optnum, bool)  0x827B3738
+TriggerShake                                (actor, string)  0x827D11C8
+TriggerVfxLight                             (obj, optnum, optnum, optnum, optnum, obj, optnum)  0x827B3B18
+TriggerVfxLightFromFx                       (optnum, optnum, optnum, optnum, obj, optnum)  0x827B3CE0
+TurnOnPerfStats                             (actor, int)  0x827B84D8
+UnCover                                     ()  0x827A11D8
+Unfreeze                                    (actor)  0x827B9D38
+UnhideFromLayer                             (actor)  0x827B92C8
+UnloadChoreset                              (string)  0x82799050
+Unlock                                      (actor)  0x827D2640
+UnlockAllInCategory                         (actor)  0x825BB148
+UnlockAllPackages                           (actor)  0x825BB258
+UnlockDataBankEntry                         (string, actor) -> bool  0x825BB420
+UnlockPackage                               (string, actor) -> bool  0x825BA878
+UnlockPackageRank                           (string, int, actor) -> bool  0x825BB4D0
+UnlockTarget                                (actor)  0x825C39E8
+UnusedReport                                ()  0x8279D290
+UnwipeLeft                                  (num, obj, string)  0x827B32D8
+UnwipeRight                                 (num, obj, string)  0x827B3390
+UpdateDebugMenu                             ()  0x827A12E0
+UpdateVehicle                               ()  0x82BA24B8
+UseCameras                                  () -> bool  0x8279B240
+UseCover                                    (actor, actor, num) -> bool  0x825B7998
+Vec3RotateX                                 (obj, num)  0x827A4658
+Vec3RotateY                                 (obj, num)  0x827A46C8
+Vec3RotateZ                                 (obj, num)  0x827A4738
+Vector                                      (obj, num, num, num)  0x827AC7A8
+VectorAdd                                   (obj, obj)  0x827A3600
+VectorCross                                 (obj, obj)  0x827A3940
+VectorDot                                   (obj, obj)  0x827A38C0
+VectorGet                                   (obj, string)  0x827A34B0
+VectorLength                                (obj)  0x827A3808
+VectorLengthSq                              (obj)  0x827A3868
+VectorNeg                                   (obj)  0x827A3A08
+VectorNormalized                            (obj)  0x827A3A80
+VectorScale                                 (obj, num)  0x827A3750
+VectorSet                                   (obj, string, num)  0x827A3558
+VectorSub                                   (obj, obj)  0x827A36A8
+Verbose                                     ()  0x8279AA90
+VideoTest                                   (string)  0x8279DB38
+VoiceDump                                   ()  0x82BA24B8
+Warn                                        ()  0x82BA24B8
+WipeLeft                                    (num, obj, string)  0x827B3448
+WipeRight                                   (num, obj, string)  0x827B3500
+WorldToLocalVec                             (udata, obj) -> bool  0x827AD068
+XOR                                         (optnum)  0x8279C008
+_GetAllRens                                 ()  0x827B07D8
+clockstart                                  ()  0x827A1878
+clockstop                                   () -> int  0x827A18F8
+doscript                                    (string, string)  0x8279F3C0
+exec                                        (string) -> bool  0x827E37C8
+go                                          (string, string) -> int  0x827E2FB8
+hudEnable                                   (bool)  0x8279F738
+hudFadeTo                                   (optnum, optnum)  0x8279F6A8
+k                                           (string) -> bool  0x827A6A90
+list                                        () -> int  0x8279A9B0
+lodThreshold                                (num)  0x8279A090
+s                                           (string) -> bool  0x827A6B10
+str2renid                                   (string)  0x827984D8
+stricrc32                                   (string)  0x82798490
+t                                           (string, num, num, num) -> bool  0x827ED1C0
+verbose                                     ()  0x8279AA90

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://recomplauncher.com/schema/recomplauncher.json",
+  "format": 1,
+  "name": "Star Wars: The Force Unleashed - Ultimate Sith Edition",
+  "repo": "DuckyNerdball/tfu-recomp-release",
+  "inputs": [
+    {
+      "id": "disc1",
+      "label": "Disc 1",
+      "role": "disc",
+      "formats": [{ "type": "file", "extensions": ["iso"] }],
+      "check": { "ids": ["4C4107D2"] }
+    },
+    {
+      "id": "disc2",
+      "label": "Disc 2",
+      "role": "disc",
+      "formats": [{ "type": "file", "extensions": ["iso"] }],
+      "check": { "ids": ["4C4107D2"] }
+    }
+  ],
+  "prepare": {
+    "program": ["Prepare.cmd"],
+    "args": ["-Launcher", "-InstallDir", "{install}", "-Disc1:{input:disc1}", "-Disc2:{input:disc2}", "-Branch", "main"],
+    "label": "Building the game from your discs (about an hour the first time)",
+    "done": ["{install}/tfu_ready.txt"],
+    "keeps_copy": true
+  },
+  "start": {
+    "program": ["Play.cmd"]
+  },
+  "folders": {
+    "game": [{ "path": "{install}/src" }],
+    "logs": [{ "path": "{install}/src/logs" }]
+  },
+  "saves": ["{install}/src/run/userdata_allfresh", "{install}/src/run/tfu_settings.toml"],
+  "settings": [
+    {
+      "id": "resolution",
+      "label": "Resolution",
+      "help": "What the game draws at. 720p is the console's own.",
+      "in": "args",
+      "choices": [
+        { "label": "1440p", "args": ["-Scale", "2"] },
+        { "label": "720p", "args": ["-Scale", "1"] },
+        { "label": "4K", "args": ["-Scale", "3"] }
+      ]
+    },
+    {
+      "id": "look",
+      "label": "Picture",
+      "help": "Clean removes most of the blur, bloom and haze. Original is the console look.",
+      "in": "args",
+      "choices": [
+        { "label": "Original", "args": ["-Look", "stock"] },
+        { "label": "Clean", "args": ["-Look", "clean"] }
+      ]
+    },
+    {
+      "id": "filter",
+      "label": "Output filter",
+      "help": "How the picture is scaled to your screen.",
+      "in": "args",
+      "advanced": true,
+      "choices": [
+        { "label": "Sharpen", "args": ["-Effect", "cas"] },
+        { "label": "FSR", "args": ["-Effect", "fsr"] },
+        { "label": "Soft", "args": ["-Effect", "bilinear"] }
+      ]
+    }
+  ]
+}
