@@ -104,7 +104,9 @@ if (-not $vs -or -not $clang) {
         }
         if (-not $clang) {
             Progress 0.02 'Downloading LLVM/clang'
-            $rels = @(Get-Release 'llvm/llvm-project' '?per_page=40') | Where-Object { $_.tag_name -match '^llvmorg-(\d+)\.\d+\.\d+$' -and -not $_.prerelease }
+            # Windows PowerShell hands the release list back as ONE object: unroll it before filtering.
+            $all  = Get-Release 'llvm/llvm-project' '?per_page=40'
+            $rels = @($all | ForEach-Object { $_ }) | Where-Object { $_.tag_name -match '^llvmorg-(\d+)\.\d+\.\d+$' -and -not $_.prerelease }
             $pick = $null
             foreach ($want in 23, 22, 21, 20) {     # 23 is the version this project is built and tested with
                 $pick = $rels | Where-Object { $_.tag_name -match "^llvmorg-$want\." -and ($_.assets | Where-Object { $_.name -match '^LLVM-[\d.]+-win64\.exe$' }) } | Select-Object -First 1
@@ -134,7 +136,11 @@ if (-not $vs -or -not $clang) {
     } catch { $proc = $null }
     if (-not $proc) { Fail 'The build tools were not installed: the Windows administrator prompt was declined or could not be shown. Press Set Up again and approve it, or install the tools yourself.' 3 }
     $t0 = Get-Date
-    while (-not $proc.HasExited) {
+    while ($true) {
+        $over = $false
+        try { $over = $proc.HasExited } catch { $over = Test-Path -LiteralPath $res }   # no access to the elevated process: go by its result file
+        if ($over -or (Test-Path -LiteralPath $res)) { break }
+        if (((Get-Date) - $t0).TotalHours -gt 3) { break }
         Start-Sleep -Seconds 30
         Progress 0.03 ("Installing build tools, {0} min so far (10 to 40 is normal)" -f [int]((Get-Date) - $t0).TotalMinutes)
     }
