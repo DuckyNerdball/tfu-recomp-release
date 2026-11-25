@@ -119,7 +119,8 @@ if (-not $vs -or -not $clang) {
         }
     } catch { Fail "A build tool could not be downloaded ($($_.Exception.Message)). Check your connection and press Set Up again." 3 }
 
-    # One elevated helper runs both installers, so Windows asks for approval once.
+    # One elevated helper runs both installers, so Windows asks for approval once. It runs in a visible window
+    # with the RemoteSigned policy (enough for a local file). Do not change either: see docs\STATUS.md 2026-11-25.
     $res  = Join-Path $Tmp 'tfu_tools_result.txt'
     $help = Join-Path $Tmp 'tfu_tools_admin.ps1'
     Remove-Item -LiteralPath $res -Force -ErrorAction SilentlyContinue
@@ -131,8 +132,8 @@ if (-not $vs -or -not $clang) {
     Progress 0.03 ('Installing ' + ($need -join ' and ') + ': approve the Windows prompt')
     $proc = $null
     try {
-        $proc = Start-Process -FilePath 'powershell.exe' -Verb RunAs -WindowStyle Hidden -PassThru -ErrorAction Stop `
-                -ArgumentList @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', ('"' + $help + '"'))
+        $proc = Start-Process -FilePath 'powershell.exe' -Verb RunAs -PassThru -ErrorAction Stop `
+                -ArgumentList @('-NoProfile', '-ExecutionPolicy', 'RemoteSigned', '-File', ('"' + $help + '"'))
     } catch { $proc = $null }
     if (-not $proc) { Fail 'The build tools were not installed: the Windows administrator prompt was declined or could not be shown. Press Set Up again and approve it, or install the tools yourself.' 3 }
     $t0 = Get-Date
@@ -207,7 +208,7 @@ $cands = @($Sdk, $env:TFU_REXGLUE_SDK,
 $sdkOk = $cands | Where-Object { Test-Path (Join-Path $_ 'out\install\win-amd64\lib\cmake\rexglue') } | Select-Object -First 1
 if (-not $sdkOk) {
     Progress 0.05 'Building the graphics SDK (30 to 60 minutes, once)'
-    & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $Src 'tools\Get-Sdk.ps1')
+    & powershell -NoProfile -ExecutionPolicy RemoteSigned -File (Join-Path $Src 'tools\Get-Sdk.ps1')
     if ($LASTEXITCODE -ne 0) { Fail 'The SDK could not be built. See the lines above.' 4 }
     $sdkOk = Join-Path $Src '.deps\rexglue-sdk'
 }
@@ -215,7 +216,7 @@ Note "SDK: $sdkOk"
 
 # ---- 6. extract, generate, build ----
 $env:TFU_LAUNCHER = '1'
-$a = @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', (Join-Path $Src 'tools\Setup-TFURecomp.ps1'),
+$a = @('-NoProfile', '-ExecutionPolicy', 'RemoteSigned', '-File', (Join-Path $Src 'tools\Setup-TFURecomp.ps1'),
        '-Root', $InstallDir, '-Repo', $Src, '-Sdk', $sdkOk, '-NoLaunch')
 if ($Disc1) { $a += @('-Iso1', $Disc1) }
 if ($Disc2) { $a += @('-Iso2', $Disc2) }
