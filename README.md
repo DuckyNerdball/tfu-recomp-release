@@ -95,3 +95,8 @@ The setup step does not install Visual Studio, clang or Git; it stops and names 
 - Never commit game binaries, assets, extracted data or saves. `.gitignore` enforces this; check `git status`
   before every commit.
 - `sdk\rexglue-tfu.patch` modifies the ReXGlue SDK; its licence is in `sdk\LICENSE-rexglue.txt`.
+
+## Licence
+The code and scripts in this repository are under the MIT licence (`LICENSE`). `sdk\rexglue-tfu.patch` is a
+modification of the ReXGlue SDK and stays under that project's licence (`sdk\LICENSE-rexglue.txt`). The game itself is
+not covered by either: it belongs to its publisher, and you need your own discs.
